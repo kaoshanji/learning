@@ -68,4 +68,72 @@ RabbitMQ 确保持久性消息能从服务器重启中恢复的方式是，将�
 
 这种模式最大的好处是他们是异步地。发布了一条消息，生产者应用程序就可以在等待确认的同时继续发送下一条。当确认消息最终受到的时候，生产者应用的回调方法就会被触发来处理该确认消息。如果Rabbit发生了内部错误从而导致了消息丢失，Rabbit会发送一条nack消息。
 
+##  安装
+
+OS： Ubuntu 18.04 LTS
+
+```base
+
+## Install RabbitMQ signing key
+sudo apt-key adv --keyserver "hkps.pool.sks-keyservers.net" --recv-keys "0x6B73A36E6026DFCA"
+
+## Install apt HTTPS transport
+sudo apt-get install apt-transport-https
+
+## Add Bintray repositories that provision latest RabbitMQ and Erlang 21.x releases
+sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list <<EOF
+deb https://dl.bintray.com/rabbitmq-erlang/debian bionic erlang-21.x
+deb https://dl.bintray.com/rabbitmq/debian bionic main
+EOF
+
+## Update package indices
+sudo apt-get update -y
+
+## Install rabbitmq-server and its dependencies
+sudo apt-get install rabbitmq-server -y --fix-missing
+
+```
+
+**远程访问**
+
+启用 Management插件：sbin文件夹下，`./rabbitmq-plugins enable rabbitmq_management`，还需要重启应用。
+
+```base
+// 修改配置
+cd /etc/rabbitmq
+sudo vim rabbitmq-env.conf
+
+// 内容去掉注释
+NODENAME=rabbit
+
+NODE_IP_ADDRESS=0.0.0.0
+
+NODE_PORT=5672
+
+// 重启
+sudo service rabbitmq-server restart
+
+```
+
+**创建用户**
+```base
+rabbitmqctl add_user admin admin
+rabbitmqctl set_user_tags admin administrator
+rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+```
+
+**远程登录**
+```base
+rabbitmq-plugins enable rabbitmq_management
+```
+
+**阿里云开放端口**
+
+实例详情，有基本信息、配置信息页面，右边：本实例安全组
+
+`入方向` ，点击快速创建规则：自定义端口填写：15672/15672、授权对象填写： 0.0.0.0/0
+
+浏览器： http://IP:15672/  admin/admin
+
+
 ----

@@ -1,4 +1,4 @@
-# rabbitmq学习
+# rabbitmq 学习
 
 
 ##  起步
@@ -12,13 +12,23 @@
 
 安装
 
-##  20%的功能
+##  [20%的功能](percentage.md)
 
 Hello,World
 
 实践一下应用常用功能
 
-##  管理
+
+##  [管理](management.md)
+
+rabbitmqctl 是几乎所有 RabbitMQ 管理需要的一站式解决方案。
+
+启动、停止节点
+
+请求许可
+
+从Web端管理
+
 
 ##  监控
 
@@ -35,6 +45,8 @@ Hello,World
 
 
 ##  优化
+
+
 
 ##  扩展
 
