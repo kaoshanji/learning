@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.kaoshanji</groupId>
+    <artifactId>xp-spring-cloud-learning-hystrix-turbine</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+
+    <name>xp-spring-cloud-learning-hystrix-turbine</name>
+    <description>xp-spring-cloud-learning-hystrix-turbine</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>app-consumer-service</module>
+        <module>app-producer-service</module>
+        <module>cloud-eureka-service</module>
+        <module>cloud-hystrix-turbine-service</module>
+        <module>app-hystrixCommand-service</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.4.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--
+                使用场景：当父依赖是公司内部依赖时（PS：不是spring-boot-starter-parent），需要这样做
+            -->
+            <!-- Spring Boot 依赖 -->
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.4.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring cloud 依赖版本号是伦敦地铁站 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>

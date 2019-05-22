@@ -1,6 +1,5 @@
 # rabbitmq 学习
 
-
 ##  起步
 - [背景](start/origin.md)
 
@@ -30,6 +29,8 @@ rabbitmqctl 是几乎所有 RabbitMQ 管理需要的一站式解决方案。
 从Web端管理
 
 
+----
+
 ##  监控
 
 
@@ -53,3 +54,7 @@ rabbitmqctl 是几乎所有 RabbitMQ 管理需要的一站式解决方案。
 
 ----
 
+## 参考资料
+-   [官网](http://www.rabbitmq.com/)
+-   [GitHub](https://github.com/rabbitmq)
+-   RabbitMQ实战：高效部署分布式消息队列
