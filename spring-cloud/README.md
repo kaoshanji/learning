@@ -26,6 +26,7 @@
 -   spring-cloud-starter-zipkin：集成zipkin，并展示追踪数据
 -   spring-cloud-config-server：配置管理中心服务端
 -   spring-cloud-starter-config：配置管理客户端
+-   spring-boot-starter-amqp：集成RabbitMQ
 
 
 ##  示例

@@ -13,6 +13,9 @@ spring-boot 集成 RabbitMQ，演示消息发送与接收。
 
 也可以把发送消息和接收消息分割成不同的项目
 
+spring boot：
+- spring-boot-starter-amqp：集成RabbitMQ
+
 ##  访问
 
 消息发送类型要与接收类型保存一致
