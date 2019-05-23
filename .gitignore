@@ -50,3 +50,8 @@ logs/
 
 ### VS Code ###
 .vscode/
+
+# Mac
+.DS_Store
+
+_book/
