@@ -14,16 +14,16 @@
 
 [mysql8地址](https://dev.mysql.com/downloads/windows/installer/8.0.html)，[mysql5.7地址](https://dev.mysql.com/downloads/windows/installer/5.7.html)，选择 mysql-installer-community版本，没有web。
 
-![0001](../images/0001.png)
-![0002](../images/0002.png)
-![0003](../images/0003.png)
-![0004](../images/0004.png)
-![0005](../images/0005.png)
-![0006](../images/0006.png)
-![0007](../images/0007.png)
-![0008](../images/0008.png)
-![0009](../images/0009.png)
-![0010](../images/00010.png)
+- ![0001](../images/0001.png)
+- ![0002](../images/0002.png)
+- ![0003](../images/0003.png)
+- ![0004](../images/0004.png)
+- ![0005](../images/0005.png)
+- ![0006](../images/0006.png)
+- ![0007](../images/0007.png)
+- ![0008](../images/0008.png)
+- ![0009](../images/0009.png)
+- ![0010](../images/00010.png)
 
 一路`下一步`。
 

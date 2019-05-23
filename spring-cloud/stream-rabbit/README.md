@@ -1,12 +1,14 @@
 #   解耦应用：消息驱动-RabbitMQ
 
-spring-boot集成RabbitMQ，演示消息发送与接收。
-
-
-##  效果
+spring-boot 集成 RabbitMQ，演示消息发送与接收。
 
 
 ##  项目列表
+
+阿里云服务器需要开放 15672、5672 端口
+
+在 RabbitMQ 创建 `springcloud` 队列，其他默认
+
 - stream-rabbit
 
 也可以把发送消息和接收消息分割成不同的项目
@@ -20,7 +22,7 @@ spring-boot集成RabbitMQ，演示消息发送与接收。
 启动 main 方法，控制台输出..
 ![20190523160512](../images/20190523160512.png)
 
-RabbitMQ控制台，出现了连接数量
+RabbitMQ 控制台，出现了连接数量
 ![20190523160554](../images/20190523160554.png)
 
 执行 测试方法：SenderTest
