@@ -9,7 +9,8 @@
 |OS|win/mac/ubuntu|操作系统|-|三种系统只是在环境配置上不同|
 |IDEA|较新版|开发工具|[地址](https://www.jetbrains.com/idea/)|----|
 |Maven|最新版|依赖包管理|[地址](https://maven.apache.org/)|第三方包管理，部署打包|
-|MySQL|5.6/8|关系型数据库|[地址](https://www.mysql.com/)|----|
+|[MySQL](../mysql/README.md)|5.7|关系型数据库|[地址](https://www.mysql.com/)|mysql示例|
+|[RabbitMQ](../rabbitmq/README.md)|3.6|消息代理服务器|[地址](http://www.rabbitmq.com/)|RabbitMQ示例|
 ||||||
 
 ##  涉及的组件
@@ -41,18 +42,20 @@
 -   [断路2：多个服务-turbine](hystrix-turbine/README.md)
 -   监控1：追踪服务调用过程-zipkin
     -   [内存](sleuth-zipkin/README.md)
-    -   [MySQL](sleuth-zipkin-mysql/README.md)
 -   配置1：示例
     -   [Git](config-git/README.md)，父目录下：Lifecycle --> clean/package 执行可得`可运行Jar包`
     -   [MySQL](config-mysql/README.md)
 -   [配置2：让配置服务作为应用](config-git-eureka/README.md)
--   [解耦应用：消息驱动-RabbitMQ](stream-rabbit/README.md)
--   [配置3：消息总线-RabbitMQ](config-git-rabbit/README.md)
--   [断路3：多个服务-turbine-RabbitMQ](hystrix-turbine-rabbit/README.md)
--   [监控2：追踪服务调用过程-zipkin-RabbitMQ](sleuth-zipkin-rabbit/README.md)
 -   网关
     -   [zuul](gateway-zuul/README.md)
     -   [Gateway](gateway-gateway/README.md)
+
+**引入消息中间件：[RabbitMQ](../rabbitmq/README.md)**
+
+-   [解耦应用：消息驱动-RabbitMQ](stream-rabbit/README.md)
+-   [配置3：消息发布配置-RabbitMQ](config-git-rabbit/README.md)
+-   [断路3：消息发布断路-turbine-RabbitMQ](hystrix-turbine-rabbit/README.md)
+-   [监控2：追踪服务调用过程-zipkin-MySQL-RabbitMQ](sleuth-zipkin-rabbit/README.md)
 
 -   版本
 

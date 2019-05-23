@@ -1,4 +1,4 @@
-# rabbitmq 学习
+# Rabbitmq 学习
 
 ##  起步
 - [背景](start/origin.md)

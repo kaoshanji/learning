@@ -10,7 +10,8 @@
 
 ##  [服务器](server.md)
 - [spring-cloud](spring-cloud/README.md)
-- [rabbitMQ](rabbitmq/README.md)
+- [RabbitMQ](rabbitmq/README.md)
+- [MySql](mysql/README.md)
 
 
 ##  专题

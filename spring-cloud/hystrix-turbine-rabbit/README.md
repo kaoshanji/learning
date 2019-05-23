@@ -1,4 +1,4 @@
-#   断路3：多个服务-turbine-RabbitMQ
+#   断路3：消息发布断路-turbine-RabbitMQ
 
 
 ##  效果

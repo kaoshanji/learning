@@ -2,8 +2,11 @@
 
 ##  Hello,World
 
-
-
+- ["Hello World!"](https://www.rabbitmq.com/tutorials/tutorial-one-java.html)
+- [Work Queues](https://www.rabbitmq.com/tutorials/tutorial-two-java.html)
+- [Publish/Subscribe](https://www.rabbitmq.com/tutorials/tutorial-three-java.html)
+- [Routing](https://www.rabbitmq.com/tutorials/tutorial-four-java.html)
+- [Topics](https://www.rabbitmq.com/tutorials/tutorial-five-java.html)
 
 
 ##  设计应用程序
@@ -29,8 +32,6 @@
 
 这个模式的特点是，把整个过程分割成两个独立的活动，通过第三方关联，具有逻辑上的先后顺序。
 
-代码示例：
-
 **发后即忘模型**
 
 
@@ -41,8 +42,5 @@
 这种也是`并行处理`，多个事情独立的进行。
 
 比如，注册用户，需要初始化账户、积分体系、邮件通知、一些资源创建等等。
-
-代码示例：
-
 
 ----
