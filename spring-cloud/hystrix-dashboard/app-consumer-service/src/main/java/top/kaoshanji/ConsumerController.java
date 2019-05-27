@@ -15,16 +15,16 @@ public class ConsumerController {
 
     private final Logger logger = LoggerFactory.getLogger(ConsumerController.class);
 
-    @GetMapping("/helloConsumer")
+    /*@GetMapping("/helloConsumer")
     public String helloConsumer(){
 
         logger.info("......helloConsumer......");
 
         return "helloConsumer";
-    }
+    }*/
 
 
-    /*@Autowired
+    @Autowired
     ExampleHelloServiceApiDepend exampleHelloServiceApiDepend;
 
     @GetMapping("/helloConsumer")
@@ -33,7 +33,7 @@ public class ConsumerController {
         logger.info("......helloConsumer......");
 
         return exampleHelloServiceApiDepend.hello();
-    }*/
+    }
 
 
 }

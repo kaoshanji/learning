@@ -22,6 +22,7 @@
         <module>app-consumer-service</module>
         <module>app-producer-service</module>
         <module>cloud-eureka-service</module>
+        <module>cloud-hystrix-dashboard</module>
     </modules>
 
    <build>

@@ -69,47 +69,23 @@ RabbitMQ 确保持久性消息能从服务器重启中恢复的方式是，将�
 这种模式最大的好处是他们是异步地。发布了一条消息，生产者应用程序就可以在等待确认的同时继续发送下一条。当确认消息最终受到的时候，生产者应用的回调方法就会被触发来处理该确认消息。如果Rabbit发生了内部错误从而导致了消息丢失，Rabbit会发送一条nack消息。
 
 ##  安装
-- 阿里云OS
-- 本地Ubuntu
 
-**`阿里云OS`： Ubuntu 18.04 LTS**
+需要注意 Erlang 和 RabbitMQ 版本兼容
 
-````bash
-
-sudo apt-key adv --keyserver "hkps.pool.sks-keyservers.net" --recv-keys "0x6B73A36E6026DFCA"
-
-sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list <<EOF
-deb https://dl.bintray.com/rabbitmq-erlang/debian bionic erlang-21.x
-deb https://dl.bintray.com/rabbitmq/debian bionic main
-EOF
-
-sudo apt-get update -y
-
-cd  /etc/apt/sources.list.d/
-
-rm -f bintray.rabbitmq.list 
-
-sudo apt-get install rabbitmq-server -y --fix-missing
-
-````
-
-**阿里云开放端口**
-
-实例详情，右边：本实例安全组
-
-添加安全组规则，放行端口15672和5672入方向规则。
-
-`入方向` ，点击快速创建规则：自定义端口填写：15672/15672、授权对象填写： 0.0.0.0/0
-
-浏览器： http://IP:15672/  admin/admin123456
+- [阿里云OS](aliyunos.md)
+- [本地Ubuntu](1111.md)，还未测试
 
 
-**本地Ubuntu**
-
-[待定](1111.md)，还未测试
 
 
-----
+##  参考
+- [ubuntu16.04安装配置rabbitmq](https://www.jianshu.com/p/a29f11e72897)
+- [阿里云ubuntu16.0安装rabbitmq](https://blog.csdn.net/u010172714/article/details/84875453)
+- [Window10下RabbitMQ安装图文教程](https://blog.csdn.net/newbie_907486852/article/details/79788471)
+  - 账户密码：guest/guest
+
+
+##  Linux 查看
 
 **服务状态**
 ````bash
@@ -174,7 +150,3 @@ rabbitmq-plugins enable rabbitmq_management
 ````
 
 ----
-
-##  参考
-- [ubuntu16.04安装配置rabbitmq](https://www.jianshu.com/p/a29f11e72897)
-- [阿里云ubuntu16.0安装rabbitmq](https://blog.csdn.net/u010172714/article/details/84875453)

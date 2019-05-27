@@ -24,6 +24,7 @@
         <module>cloud-eureka-service</module>
         <module>cloud-hystrix-turbine-service</module>
         <module>app-hystrixCommand-service</module>
+        <module>cloud-hystrix-dashboard</module>
     </modules>
 
     <build>

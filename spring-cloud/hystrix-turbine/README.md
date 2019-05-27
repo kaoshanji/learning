@@ -1,6 +1,6 @@
 #   断路2：多个服务-turbine
 
-
+通过 HTTP 收集聚合
 
 ##  效果
 
@@ -10,11 +10,13 @@
 
 
 ##  项目列表
--   cloud-eureka-service：治理服务，第一个启动
--   app-producer-service：服务提供者，其次启动
--   app-consumer-service：服务消费者，再次启动
--   app-hystrixCommand-service：演示方法级断路，再次启动
--   cloud-hystrix-turbine-service：聚合监控信息，再次启动
+- cloud-eureka-service：治理服务，第一个启动
+- app-producer-service：服务提供者，其次启动
+- app-consumer-service：服务消费者，再次启动
+- app-hystrixCommand-service：演示方法级断路，再次启动
+- cloud-hystrix-turbine-service：聚合监控信息，再次启动
+- cloud-hystrix-dashboard：显示监控信息，再次启动
+
 
 spring cloud：
 -   spring-cloud-starter-netflix-eureka-server：服务治理中心，提供服务发现、注册功能，是服务大管家
@@ -33,13 +35,10 @@ spring cloud：
 -   断路接口
     -   http://localhost:8200/helloConsumer --> kaoshanji
     -   http://localhost:8300/hystrixCommand --> hystrixCommand
--   聚合数据：http://localhost:7700/turbine.stream
-    -   在不停的加载数据
-    -   效果：![20190516175627](../images/20190516175627.png)
--   图标显示
-    -   地址：http://localhost:8300/hystrix
-    -   输入：http://localhost:7700/turbine.stream
-    -   效果：![20190516175007](../images/20190516175007.png)
+- 仪表界面： http://localhost:7100/hystrix
+  - 效果：![20190527155433](../images/20190527155433.png)
+  - 输入 `http://localhost:7200/turbine.stream` ，收集到的监控数据呈现出来
+  - 效果：![20190527155228](../images/20190527155228.png)
 
 
 ##  备注
