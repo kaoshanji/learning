@@ -7,13 +7,18 @@
 
 安装本地 RabbitMQ 服务器
 
+/** 注释掉..
 - 创建
   - 虚拟机： spring-turbine
   - 账户密码： springxp/springxp123456 ，并设置成 管理器
   - 权限：springxp 下 具有对 spring-turbine 全部权限
+  **/
 
 项目启动时会自动创建 交换器、队列等，可以注意观察 RabbitMQ 控制面板和IDEA控制台
 
+查看 RabbitMQ
+- ![20190528114747](../images/20190528114747.png)
+- ![20190528114801](../images/20190528114801.png)
 
 ##  项目列表
 -   cloud-eureka-service：治理服务，第一个启动

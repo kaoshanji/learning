@@ -3,17 +3,15 @@ package top.kaoshanji;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-
-@EnableTurbineStream
+@EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
-public class TurbineApp {
+public class ProducerApp {
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(TurbineApp.class, args);
+    public static void main( String[] args ) {
+        SpringApplication.run(ProducerApp.class, args);
     }
-
 
 }
