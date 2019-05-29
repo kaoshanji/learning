@@ -39,8 +39,8 @@
 
 -   [起步：依赖调用](client-depend/README.md)
 -   [基础：服务中心和服务断路](hystrix-eureka/README.md)
--   [断路1：某个服务](hystrix-dashboard/README.md)
--   [断路2：多个服务-turbine](hystrix-turbine/README.md)
+-   [熔断状态1：某个服务](hystrix-dashboard/README.md)
+-   [熔断状态2：多个服务-turbine](hystrix-turbine/README.md)
 -   监控1：追踪服务调用过程-zipkin
     -   [内存](sleuth-zipkin/README.md)
 -   配置1：示例
@@ -56,7 +56,7 @@
 -   [解耦应用：消息驱动-RabbitMQ](stream-rabbit/README.md)
 -   [配置3：消息发布配置-RabbitMQ](config-git-rabbit/README.md)
 -   [断路3：消息发布断路-turbine-RabbitMQ](hystrix-turbine-rabbit/README.md)
--   [监控2：追踪服务调用过程-zipkin-MySQL-RabbitMQ](sleuth-zipkin-rabbit/README.md)
+-   [监控2：追踪服务调用过程-zipkin-MySQL-RabbitMQ](sleuth-zipkin-mysql/README.md)
 
 -   版本
 
