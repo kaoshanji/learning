@@ -9,7 +9,7 @@
 
 
 ##  [服务器](server.md)
-- [spring-cloud](spring-cloud/README.md)
+- [Spring Cloud](spring-cloud/README.md)
 - [RabbitMQ](rabbitmq/README.md)
 - [MySql](mysql/README.md)
 
