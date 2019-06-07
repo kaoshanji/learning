@@ -18,6 +18,9 @@
 - [spring_framework_doc_zh_4.3.24](spring_framework_doc_zh_4.3.24/README.md)
 
 
+##  谷歌翻译
+- [分布式系统:乐趣和收货](dsdistsys/README.md)
+
 ##  专题
 - [web系统-微服务](app/bigweb.md)
 

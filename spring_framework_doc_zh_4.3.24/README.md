@@ -6,4 +6,6 @@ spring framework 4.3.23 文档谷歌翻译，部分章节。
 
 已编译可直接导入STS运行[地址](https://pan.baidu.com/s/1odP2Y6tAyogo3fJDVv0Cbg)，密码： d0iz
 
+[原文地址](https://docs.spring.io/spring/docs/4.3.24.RELEASE/spring-framework-reference/htmlsingle/)
+
 ----
