@@ -8,19 +8,24 @@
 实践！实践！实践！示例！
 
 
-##  [服务器](server.md)
-- [Spring Cloud](spring-cloud/README.md)
-- [RabbitMQ](rabbitmq/README.md)
-- [MySql](mysql/README.md)
+##  Java平台
+- [Java核心技术](JavaCore/README.md)
+- [Java框架](JavaFramework/README.md)
+  - [spring_framework_doc_zh_4.3.24](JavaFramework/spring_framework_doc_zh_4.3.24/README.md)
+  - [MyBatis](JavaFramework/mybatis/README.md)
 
 
-##  Java技术
-- [spring_framework_doc_zh_4.3.24](spring_framework_doc_zh_4.3.24/README.md)
-- [MyBatis](mybatis/README.md)
-
-
-##  谷歌翻译
-- [分布式系统:乐趣和收货](dsdistsys/README.md)
+##  分布式
+- [理论概括](distributedTheory/README.md) 
+  - [分布式系统:乐趣和收获](distributedTheory/funAndprofit/README.md)
+- [服务器](server/README.md)
+  - [消息中间件](server/mq/README.md)
+    - [RabbitMQ](server/mq/rabbitmq/README.md)
+  - [数据存储](server/database/README.md)
+    - [MySql](server/database/mysql/README.md)
+- 应用模式
+  - 微服务
+  - [Spring Cloud](spring-cloud/README.md)
 
 ##  专题
 - [web系统-微服务](app/bigweb.md)
