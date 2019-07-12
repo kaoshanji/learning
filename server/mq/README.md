@@ -1,11 +1,13 @@
 # 消息中间件
 
+分布式系统是其组件分布在连网的计算机上，组件之间通过传递消息进行通信和动作协调的系统。
 
 
-##  [RabbitMQ](rabbitmq/README.md)
 
-
-##  KafKa
+##  章节
+- [概述](overview.md)
+- [RabbitMQ](rabbitmq/README.md)
+- KafKa
 
 
 ##  参考
@@ -22,4 +24,9 @@
 - RabbitMQ实战：高效部署分布式消息队列
 - 深入RabbbitMQ
 - Apache kafka实战
+- 芋道源码..知识星球大佬账户
+  - [精尽【消息队列 】面试题](http://svip.iocoder.cn/MQ/Interview/)
+  - [精尽 Kafka 面试题](http://svip.iocoder.cn/Kafka/Interview/)
+  - [精尽 RabbitMQ 面试题](http://svip.iocoder.cn/RabbitMQ/Interview/)
+  - [精尽 RocketMQ 面试题](http://svip.iocoder.cn/RocketMQ/Interview/)
 
