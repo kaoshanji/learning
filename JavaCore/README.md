@@ -6,7 +6,6 @@
 
 ##  语法库
 - [面向对象](object/README.md)
-- [类型系统](typeos/README.md)
 - [动态特性](dynamic/README.md)
 
 
@@ -16,7 +15,6 @@
 - [并发](concurrent/README.md)
 - [集合](collection/README.md)
 - [JVM](jvm/README.md)
-  - 性能调优
   - 内存模型
 
 
@@ -25,5 +23,5 @@
 - [JDK](jdk/README.md)
 - 设计模式
 
-
-
+3.  性能
+- [Java性能调优](performance/README.md)
