@@ -15,11 +15,15 @@
 - [输入输出：I/O](io/README.md)
 - [并发](concurrent/README.md)
 - [集合](collection/README.md)
+- [JVM](jvm/README.md)
+  - 性能调优
+  - 内存模型
 
 
 2.  进阶：某些语法在框架使用示例
 
-
+- [JDK](jdk/README.md)
+- 设计模式
 
 
 
