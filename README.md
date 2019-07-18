@@ -11,8 +11,10 @@
 ##  Java平台
 - [Java核心技术](JavaCore/README.md)
 - [Java框架](JavaFramework/README.md)
-  - [spring_framework_doc_zh_4.3.24](JavaFramework/spring_framework_doc_zh_4.3.24/README.md)
+  - [Spring_framework_doc_zh_4.3.24](JavaFramework/spring_framework_doc_zh_4.3.24/README.md)
   - [MyBatis](JavaFramework/mybatis/README.md)
+  - [Tomcat](JavaFramework/tomcat/README.md)
+  - [Netty](JavaFramework/netty/README.md)
 
 
 ##  分布式
@@ -23,6 +25,7 @@
     - [RabbitMQ](server/mq/rabbitmq/README.md)
   - [数据存储](server/database/README.md)
     - [MySql](server/database/mysql/README.md)
+    - [Redis](server/database/redis/README.md)
 - 应用模式
   - 微服务
   - [Spring Cloud](spring-cloud/README.md)

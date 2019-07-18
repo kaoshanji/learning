@@ -66,7 +66,10 @@ Hello,World
 
 
 
-
+##  参考
+- 高性能MySql
+- MySQL 8 Cookbook（中文版）
+- 极客时间：MySQL实战45讲
 
 
 

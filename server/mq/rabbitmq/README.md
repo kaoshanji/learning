@@ -60,8 +60,9 @@ rabbitmqctl 是几乎所有 RabbitMQ 管理需要的一站式解决方案。
 
 ----
 
-## 参考资料
+## 参考
 - [官网](http://www.rabbitmq.com/)
 - [GitHub](https://github.com/rabbitmq)
 - RabbitMQ实战：高效部署分布式消息队列
+- 深入RabbitMQ
 - [消息队列之 RabbitMQ](https://www.jianshu.com/p/79ca08116d57)
