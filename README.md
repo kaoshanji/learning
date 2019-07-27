@@ -9,7 +9,7 @@
 
 
 ##  Java平台
-- [Java 8 谷歌翻译](java_doc_zh_8/README.md)
+- [Java SE 8 谷歌翻译](java_se_doc_zh_8/README.md)
 - [Java 核心技术](JavaCore/README.md)
 - [Java 框架](JavaFramework/README.md)
   - [Spring framework 4.3.24 谷歌翻译](JavaFramework/spring_framework_doc_zh_4.3.24/README.md)
