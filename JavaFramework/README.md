@@ -28,7 +28,7 @@
 
 在该项目的GitHub里 `Fork` 到自己的账户下，并且依据指定版本创建一个自定义分支，后面代码阅读就是以这个分支为依据，比如：调试、修改、添加注释等。
 
-示例：[spring-framework](https://github.com/spring-projects/spring-framework)，Fork 到自己的[账户](https://github.com/kaoshanji/spring-framework)下，选择分支 `v4.3.24.RELEASE` 作为指定分支，并创建[自己的分支](https://github.com/kaoshanji/spring-framework/tree/kaoshanji-4.3.24)，如此一来，这个分支就由你完全控制了，并不会被官方更新，版本环境被固定，后面就可以进行了。
+示例：[spring-framework](https://github.com/spring-projects/spring-framework)，Fork 到自己的[账户](https://github.com/kaoshanji/spring-framework)下，选择分支 `v4.3.24.RELEASE` 作为指定分支，并创建[自己的分支](https://github.com/kaoshanji/spring-framework/tree/kaoshanji-4.3.24)，如此一来，这个分支就由我完全控制了，并不会被官方更新，版本环境被固定，后面就可以进行了。
 
 源码编译过程，依据官方指示即可。
 
