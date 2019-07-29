@@ -38,6 +38,7 @@
 
 
 ##  其他
-- [文章](bbb/README.md) 
+- [文章](bbb/README.md)
+- [Java示例代码](JavaLearingCode/README.md)
 
 ----
