@@ -27,7 +27,7 @@
 您可以使用Java DB，它随最新版本的Java SE SDK一起提供。本教程已针对以下DBMS进行了测试：
 
 - [Java DB](http://www.oracle.com/technetwork/java/javadb/overview/index.html)
-- [MySQL的](http://www.mysql.com/)
+- [MySQL](http://www.mysql.com/)
 
 请注意，如果您使用的是其他DBMS，则可能必须更改教程示例的代码。
 

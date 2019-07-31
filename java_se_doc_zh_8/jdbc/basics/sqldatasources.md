@@ -17,7 +17,7 @@
 
 ## 使用DataSource对象获取连接
 
-在“ [建立连接”中](https://docs.oracle.com/javase/tutorial/jdbc/basics/connecting.html)，您学习了如何使用`DriverManager`该类建立连接。本节介绍如何使用`DataSource`对象获取与数据源的连接，这是首选方法。
+在“ [建立连接”中](connecting.md)，您学习了如何使用`DriverManager`该类建立连接。本节介绍如何使用`DataSource`对象获取与数据源的连接，这是首选方法。
 
 由实现`DataSource`代表特定DBMS或某些其他数据源（例如文件）的类实例化的对象。甲`DataSource`对象表示一个特定的DBMS或一些其它数据源，诸如一个文件。如果公司使用多个数据源，它将`DataSource`为每个数据源部署一个单独的对象。该`DataSource`接口由驱动程序供应商实现。它可以通过三种不同的方式实现：
 

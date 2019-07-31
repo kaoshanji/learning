@@ -55,6 +55,8 @@ public class JbdcUtil {
         stmt.executeBatch();
         //提交事务
         connection.commit();
+        stmt.close();
+        connection.setAutoCommit(true);
         connection.close();
     }
 

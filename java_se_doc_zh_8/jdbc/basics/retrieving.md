@@ -33,7 +33,7 @@ public static void viewTable(Connection con, String dbName)
 }
 ```
 
-甲`ResultSet`对象是表示数据库结果集，这通常是通过执行查询数据库的语句产生的数据的表。例如，该`CoffeeTables.viewTable`方法创建一个`ResultSet`，`rs`当它执行通过查询`Statement`对象，`stmt`。请注意，`ResultSet`对象可以通过实现任何对象创建`Statement`界面，包括`PreparedStatement`，`CallableStatement`，和`RowSet`。
+甲`ResultSet`对象是表示数据库结果集，这通常是通过执行查询数据库的语句产生的数据的表。例如，该`CoffeeTables.viewTable`方法创建一个`ResultSet`，`rs`当它执行通过查询`Statement`对象，`stmt`。请注意，`ResultSet`对象可以通过任何实现`Statement`接口，包括`PreparedStatement`，`CallableStatement`，和`RowSet`创建。
 
 您可以`ResultSet`通过游标访问对象中的数据。请注意，此游标不是数据库游标。该游标是一个指向该行中一行数据的指针`ResultSet`。最初，光标位于第一行之前。该方法`ResultSet.next`将光标移动到下一行。`false`如果光标位于最后一行之后，则返回此方法。此方法`ResultSet.next`使用`while`循环重复调用该方法以遍历所有数据`ResultSet`。
 
