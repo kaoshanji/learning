@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.kaoshanji.learning.mybatis.mapper.MemberDistributionMapper">
+
+	<select id="getMemberDistributionById" parameterType="java.lang.Long" resultType="top.kaoshanji.learning.mybatis.entity.MemberDistributionEntity">
+		SELECT
+			id AS id,
+			member_id AS memberId,
+			parent_id AS parentId,
+			front_ids AS frontIds,
+			tree_level AS treeLevel
+		FROM
+			md_member_distribution
+		WHERE
+			id = #{id}
+	</select>
+
+	<select id="getMemberDistributionList" parameterType="top.kaoshanji.learning.mybatis.vo.MemberDistributionListRequest" resultType="top.kaoshanji.learning.mybatis.entity.MemberDistributionEntity">
+		SELECT
+			id AS id,
+			member_id AS memberId,
+			parent_id AS parentId,
+			front_ids AS frontIds,
+			tree_level AS treeLevel
+		FROM
+			md_member_distribution
+		WHERE 1 = 1
+
+		<if test="null!=frontIds">
+			and front_ids like concat('%',#{frontIds},'%')
+		</if>
+
+		<if test="null!=treeLevel">
+			and tree_level = #{treeLevel}
+		</if>
+
+		order by id asc
+		limit 0,3
+
+	</select>
+
+	
+</mapper>

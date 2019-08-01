@@ -25,7 +25,7 @@ public class JbdcUtil {
         String drivers = "com.mysql.jdbc.Driver";
         Class.forName(drivers);
 
-        String url = "jdbc:mysql://localhost:3306/beike?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
+        String url = "jdbc:mysql://localhost:3306/Jlearning?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
         String username = "root";
         String password = "Xande@123z456P;";
 
