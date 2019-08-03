@@ -10,7 +10,7 @@
 
 
 ##  平台抽象
-- [数据解析](dataresolve/README.md)
+- [JDBC](jdbc.md)
 - [输入输出：I/O](io/README.md)
 - [并发](concurrent/README.md)
 - [集合](collection/README.md)
