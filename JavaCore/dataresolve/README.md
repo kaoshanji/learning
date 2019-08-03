@@ -15,7 +15,7 @@
 ##  XML
 
 
-##  [JDBC](jdbc/README.md)
+##  [JDBC](jdbc.md)
 
 
 ##  参考
