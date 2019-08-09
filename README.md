@@ -15,7 +15,7 @@
 - [Java 框架](JavaFramework/README.md)
   - [Spring framework 4.3.24 谷歌翻译](JavaFramework/spring_framework_doc_zh_4.3.24/README.md)
   - [Spring framework 4.3.24 源码阅读](JavaFramework/spring_framework_source_4.3.24/README.md)
-  - [MyBatis 3.5.1 源码阅读](JavaFramework/mybatis/README.md)
+  - [MyBatis 3.5.1 源码阅读](JavaFramework/mybatis_source_3.5.1/README.md)
   - [Tomcat](JavaFramework/tomcat/README.md)
   - [Netty](JavaFramework/netty/README.md)
 

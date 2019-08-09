@@ -2,6 +2,8 @@
 
 读 Java 框架的一点理解，看别人的东西还是需要思考一下。
 
+抽象：数据支撑、逻辑驱动
+
 主要内容：
 - 角度：如果让你实现上述框架，你该怎么做？
 - 控制源码
@@ -38,8 +40,22 @@
 
 示例：[spring-framework](https://github.com/spring-projects/spring-framework)，Fork 到自己的[账户](https://github.com/kaoshanji/spring-framework)下，选择分支 `v4.3.24.RELEASE` 作为指定分支，并创建[自己的分支](https://github.com/kaoshanji/spring-framework/tree/kaoshanji-4.3.24)，如此一来，这个分支就由我完全控制了，并不会被官方更新，版本环境被固定，后面就可以进行了。
 
-源码编译过程，依据官方指示即可。
+`测试类`是很好的验证调试方式
 
+- Spring framework 源码编译
 
+安装 JDK 1.8，网络可以观看 8M蓝光直播 最好。
+
+进入文件夹 win/Linux 直接运行 import-into-eclipse.bat/.sh，一路下一步，记最为顺利的一次。
+
+![2019080901](images/2019080901.png)
+
+- MyBatis 3.5.1 源码编译
+
+MyBatis 项目是一个 Maven 项目，由本身和父项目组成。
+
+下载下来之后，在 pom.xml 看看 `parent` 指定的版本，也下载到同级目录
+
+然后，当做普通 Maven 项目导入即可，最好使用 IDEA。
 
 

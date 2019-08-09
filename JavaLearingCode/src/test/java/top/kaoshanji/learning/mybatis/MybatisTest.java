@@ -4,6 +4,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -26,39 +27,46 @@ public class MybatisTest {
 
     private final static Logger logger = LoggerFactory.getLogger(MybatisTest.class);
 
-    SqlSessionFactory sqlSessionFactory = null;
+    MemberDistributionMapper mapper = null;
+    SqlSession session = null;
 
     @Before
     public void before() throws IOException {
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        // mybatis 启动入口
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // mybatis 对外接口
+        session = sqlSessionFactory.openSession();
+        // 与业务代码对接，返回的对象是由 mybatis 创建
+        mapper =  session.getMapper(MemberDistributionMapper.class);
     }
 
     @Test
     public void getMemberDistributionById() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
 
-            MemberDistributionMapper mapper =  session.getMapper(MemberDistributionMapper.class);
-            MemberDistributionEntity entity = mapper.getMemberDistributionById(2L);
+        MemberDistributionEntity entity = mapper.getMemberDistributionById(2L);
 
-            logger.info(HttpClientUtilConfigInfo.getGson().toJson(entity));
-        }
+        logger.info(HttpClientUtilConfigInfo.getGson().toJson(entity));
+
     }
 
     @Test
     public void getMemberDistributionList() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
 
-            MemberDistributionMapper mapper =  session.getMapper(MemberDistributionMapper.class);
+        MemberDistributionListRequest request = new MemberDistributionListRequest();
+        request.setTreeLevel(7);
+        List<MemberDistributionEntity> list = mapper.getMemberDistributionList(request);
 
-            MemberDistributionListRequest request = new MemberDistributionListRequest();
-            request.setTreeLevel(7);
+        logger.info(HttpClientUtilConfigInfo.getGson().toJson(list));
+    }
 
-            List<MemberDistributionEntity> list = mapper.getMemberDistributionList(request);
-
-            logger.info(HttpClientUtilConfigInfo.getGson().toJson(list));
-        }
+    @After
+    public void after() {
+        session.clearCache();
+        session.close();
+        mapper = null;
     }
 
 
