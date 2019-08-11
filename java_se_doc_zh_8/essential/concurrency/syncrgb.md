@@ -1,0 +1,84 @@
+# 同步类示例
+
+该类 [`SynchronizedRGB`](examples/SynchronizedRGB.java)定义了表示颜色的对象。每个对象将颜色表示为代表主要颜色值的三个整数和一个给出颜色名称的字符串。
+
+```java
+public class SynchronizedRGB {
+
+    // Values must be between 0 and 255.
+    private int red;
+    private int green;
+    private int blue;
+    private String name;
+
+    private void check(int red,
+                       int green,
+                       int blue) {
+        if (red < 0 || red > 255
+            || green < 0 || green > 255
+            || blue < 0 || blue > 255) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public SynchronizedRGB(int red,
+                           int green,
+                           int blue,
+                           String name) {
+        check(red, green, blue);
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.name = name;
+    }
+
+    public void set(int red,
+                    int green,
+                    int blue,
+                    String name) {
+        check(red, green, blue);
+        synchronized (this) {
+            this.red = red;
+            this.green = green;
+            this.blue = blue;
+            this.name = name;
+        }
+    }
+
+    public synchronized int getRGB() {
+        return ((red << 16) | (green << 8) | blue);
+    }
+
+    public synchronized String getName() {
+        return name;
+    }
+
+    public synchronized void invert() {
+        red = 255 - red;
+        green = 255 - green;
+        blue = 255 - blue;
+        name = "Inverse of " + name;
+    }
+}
+```
+
+`SynchronizedRGB`必须小心使用，以免被发现处于不一致状态。例如，假设一个线程执行以下代码：]
+
+```java
+SynchronizedRGB color =
+    new SynchronizedRGB(0, 0, 0, "Pitch Black");
+...
+int myColorInt = color.getRGB();      //Statement 1
+String myColorName = color.getName(); //Statement 2
+```
+
+如果另一个线程`color.set`在语句1之后但在语句2之前调用，则其值`myColorInt`将与值不匹配`myColorName`。为了避免这种结果，必须将两个语句绑定在一起：
+
+```java
+synchronized (color) {
+    int myColorInt = color.getRGB();
+    String myColorName = color.getName();
+} 
+```
+
+这种不一致性只适用于可变对象 - 对于不可变版本而言，它不会成为问题`SynchronizedRGB`。

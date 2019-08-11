@@ -13,7 +13,7 @@
 * [基本Java类](essential/README.md)
     * [异常](essential/exceptions.md)
     * [基本I/O](essential/io.md)
-    * [并发性](essential/concurrency.md)
+    * [并发性](essential/concurrency//README.md)
     * [平台环境](essential/environment.md)
     * [正则表达式](essential/regex.md)
 * [集合](collections/README.md)
