@@ -1,46 +1,18 @@
 # Spring framework 4.3.24 源码阅读
 
+
+
+##  目录
+- [IOC容器](ioc/README.md)
+- [AOP](aop/README.md)
+- [DAO](dao/README.md)
+- [JDBC](jdbc/README.md)
+- [TX](tx/README.md)
+- [MVC](mvc/README.md)
+
 1.  功能清单
 
 ##  核心技术
 
 ### IOC 容器
-
-理论支撑：IOC
-
-基本组件：容器和Bean
-
-- 容器：负责实例化、配置和组装bean
-  - 加载、配置元数据
-  - 实例化容器
-  - 使用容器
-  - 容器扩展点
-  - 注解容器配置
-  - 类扫描和组件管理
-  - Java代码容器配置
-- Bean：由spring ioc 容器管理的对象
-  - Bean在容器内的表示
-  - 实例化bean
-  - Bean作用域
-  - 自定义Bean
-- 依赖：解决对象之间的关系
-  - 依赖注入
-  - 依赖关系和配置
-  - 使用依赖
-  - 延迟初始化的bean
-  - 自动装配
-  - 方法注入
-
-
-
-
-
-
-### 资源
-
-
-
-### AOP
-
-
 

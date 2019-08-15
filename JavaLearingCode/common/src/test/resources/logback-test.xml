@@ -1,0 +1,60 @@
+<configuration>
+
+	<!-- 定义变量  start-->
+	
+	<!-- 应用名称 -->
+	<property name="APP_NAME" value="JavaLeanringCodeCommon" />
+	<!-- 文件路径 -->
+	<property name="LOG_HOME" value="../logs" />
+	
+	<!-- 定义变量  end-->
+	
+	<!-- 上下文名称 -->
+	<contextName>${APP_NAME}</contextName>
+	
+	<!-- 输出组件  start-->
+	
+	<!-- 日志组件 输出控制台 -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+	   <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+	     <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	   </encoder>
+	</appender>
+	
+	<!-- 日志组件 输出文件 -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <file>${LOG_HOME}/${APP_NAME}.log</file>
+	    
+	    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+	      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	    </encoder>
+	    
+	    <!-- 按照每天生成日志文件 -->
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> 
+　　　　　　　　　<fileNamePattern>${LOG_HOME}/${APP_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!--日志文件保留天数-->
+			<MaxHistory>30</MaxHistory>
+　　　　　　</rollingPolicy>
+
+	    <!--日志文件最大的大小-->
+	    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> 
+　　　　　　　　　<maxFileSize>10MB</maxFileSize> 
+　　　　　　</triggeringPolicy> 
+	    
+	</appender>
+	
+	<!-- 输出组件  end-->
+  
+  	<!-- 包级别 -->
+	<!-- 
+	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+	 -->
+
+  	<!-- TRACE < DEBUG < INFO < WARN < ERROR -->
+  	<!-- 设置级别 大于DEBUG都会输出.. -->
+	<root level="INFO">
+	  <appender-ref ref="CONSOLE" />
+	  <appender-ref ref="FILE" />
+	</root>
+  
+</configuration>
