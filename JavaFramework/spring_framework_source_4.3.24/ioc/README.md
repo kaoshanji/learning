@@ -1,6 +1,9 @@
 # IOC容器
 
 
+线索：注意 `configLocations`的传递
+
+
 ##  功能清单
 
 理论支撑：IOC
