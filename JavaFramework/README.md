@@ -42,14 +42,6 @@
 
 `测试类`是很好的验证调试方式
 
-- Spring framework 源码编译
-
-安装 JDK 1.8，网络可以观看 8M蓝光直播 最好。
-
-进入文件夹 win/Linux 直接运行 import-into-eclipse.bat/.sh，一路下一步，记最为顺利的一次。
-
-![2019080901](images/2019080901.png)
-
 - MyBatis 3.5.1 源码编译
 
 MyBatis 项目是一个 Maven 项目，由本身和父项目组成。
@@ -57,6 +49,17 @@ MyBatis 项目是一个 Maven 项目，由本身和父项目组成。
 下载下来之后，在 pom.xml 看看 `parent` 指定的版本，也下载到同级目录
 
 然后，当做普通 Maven 项目导入即可，最好使用 IDEA。
+
+- Spring framework 4.3.24 源码编译
+
+安装 JDK 1.8，网络可以观看 8M蓝光直播 最好。
+
+进入文件夹 win/Linux 直接运行 import-into-eclipse.bat/.sh，一路下一步，记最为顺利的一次。
+
+![2019080901](images/2019080901.png)
+
+- Tomcat 8.5
+
 
 ##  阅读准备
 

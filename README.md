@@ -3,6 +3,8 @@
 只有代码没有文档的项目是没有人看的，所以请先看`文档`，代码在这里只是演示，文字说明有什么和做什么。
 
 
+- [问与答:背诵](recite/README.md)
+
 **学习法实践**
 
 实践！实践！实践！示例！
@@ -21,7 +23,7 @@
 
 
 ##  分布式
-- [理论概括](distributedTheory/README.md) 
+- [理论](distributedTheory/README.md) 
   - [分布式系统:乐趣和收获](distributedTheory/funAndprofit/README.md)
 - [服务器](server/README.md)
   - [消息中间件](server/mq/README.md)
