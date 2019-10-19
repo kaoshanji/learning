@@ -63,17 +63,17 @@ bean的非单例原型范围部署导致每次发出对该特定bean的请求时
 
 ### 7.5.4请求，会话，全局会话，应用程序和WebSocket范围
 
-的`request`，`session`，`globalSession`，`application`，和`websocket`范围是 *仅*如果使用基于web的Spring可`ApplicationContext`实现（如`XmlWebApplicationContext`）。如果你将这些范围与常规的Spring IoC容器一起使用`ClassPathXmlApplicationContext`，那么`IllegalStateException`会抛出抱怨未知的bean范围。
+`request`，`session`，`globalSession`，`application`，和`websocket`范围是 *仅*如果使用基于web的Spring可`ApplicationContext`实现（如`XmlWebApplicationContext`）。如果你将这些范围与常规的Spring IoC容器一起使用`ClassPathXmlApplicationContext`，那么`IllegalStateException`会抛出抱怨未知的bean范围。
 
 #### 初始Web配置
 
-为了支持豆的范围界定在`request`，`session`，`globalSession`， `application`，和`websocket`（即具有web作用域bean），定义你的豆之前，需要做少量的初始配置。（这是初始设置*不* 必需的标准范围，`singleton`和`prototype`）。
+为了支持bean的范围界定在`request`，`session`，`globalSession`， `application`，和`websocket`（即具有web作用域bean），定义你的bean之前，需要做少量的初始配置。（这是初始设置*不* 必需的标准范围，`singleton`和`prototype`）。
 
 如何完成此初始设置取决于您的特定Servlet环境。
 
-如果您访问效果Spring Web MVC框架内范围的豆类，即由Spring处理的请求中`DispatcherServlet`或`DispatcherPortlet`，则没有特殊的设置是必要的：`DispatcherServlet`与`DispatcherPortlet`已公开所有相关的状态。
+如果您访问效果Spring Web MVC框架内范围的bean类，即由Spring处理的请求中`DispatcherServlet`或`DispatcherPortlet`，则没有特殊的设置是必要的：`DispatcherServlet`与`DispatcherPortlet`已公开所有相关的状态。
 
-如果您使用Servlet 2.5 Web容器，并且在Spring之外处理请求 `DispatcherServlet`（例如，使用JSF或Struts时），则需要注册`org.springframework.web.context.request.RequestContextListener` `ServletRequestListener`。对于Servlet 3.0+，可以通过`WebApplicationInitializer` 界面以编程方式完成。或者，或者对于旧容器，将以下声明添加到Web应用程序的`web.xml`文件中：
+如果您使用Servlet 2.5 Web容器，并且在Spring之外处理请求 `DispatcherServlet`（例如，使用JSF或Struts时），则需要注册`org.springframework.web.context.request.RequestContextListener` `ServletRequestListener`。对于Servlet 3.0+，可以通过`WebApplicationInitializer` 接口以编程方式完成。或者，或者对于旧容器，将以下声明添加到Web应用程序的`web.xml`文件中：
 
 ```xml
 <web-app>
@@ -267,7 +267,7 @@ CGLIB代理只拦截公共方法调用！不要在这样的代理上调用非公
 
 ### 7.5.5自定义范围
 
-豆捞机构是可扩展的; 您可以定义自己的范围，甚至可以重新定义现有范围，尽管后者被认为是不好的做法，您*无法*覆盖内置`singleton`和`prototype`范围。
+bean作用域是可扩展的; 您可以定义自己的范围，甚至可以重新定义现有范围，尽管后者被认为是不好的做法，您*无法*覆盖内置`singleton`和`prototype`范围。
 
 #### 创建自定义范围
 

@@ -131,13 +131,13 @@ public class SimpleMovieLister {
 }
 ```
 
-它`ApplicationContext`支持它管理的bean的基于构造函数和基于setter的DI。在通过构造函数方法注入了一些依赖项之后，它还支持基于setter的DI。您可以以a的形式配置依赖项，并将`BeanDefinition`其与`PropertyEditor`实例结合使用，以将属性从一种格式转换为另一种格式。然而，大多数Spring用户不直接与这些类（即，编程），而是用XML `bean` 定义，注释组件（即与注释类`@Component`， `@Controller`等等），或`@Bean`在基于Java的方法`@Configuration`类。然后，这些源在内部转换为实例`BeanDefinition`并用于加载整个Spring IoC容器实例。
+它`ApplicationContext`支持它管理的bean的基于构造函数和基于setter的DI。在通过构造函数方法注入了一些依赖项之后，它还支持基于setter的DI。您可以以a的形式配置依赖项，并将`BeanDefinition`其与`PropertyEditor`实例结合使用，以将属性从一种格式转换为另一种格式。然而，大多数Spring用户不直接与这些类（即，编程），而是用XML `bean` 定义，注解组件（即与注解类`@Component`， `@Controller`等等），或`@Bean`在基于Java的方法`@Configuration`类。然后，这些源在内部转换为实例`BeanDefinition`并用于加载整个Spring IoC容器实例。
 
 #### 依赖性解决过程
 
 容器执行bean依赖性解析，如下所示：
 
-- 使用`ApplicationContext`描述所有bean的配置元数据创建和初始化。可以通过XML，Java代码或注释指定配置元数据。
+- 使用`ApplicationContext`描述所有bean的配置元数据创建和初始化。可以通过XML，Java代码或注解指定配置元数据。
 - 对于每个bean，如果使用的是依赖于普通构造函数的，那么它的依赖关系将以属性，构造函数参数或static-factory方法的参数的形式表示。*实际创建* bean *时，会将*这些依赖项提供给bean 。
 - 每个属性或构造函数参数都是要设置的值的实际定义，或者是对容器中另一个bean的引用。
 - 作为值的每个属性或构造函数参数都从其指定格式转换为该属性或构造函数参数的实际类型。默认情况下，Spring能够转换成字符串格式提供给所有的内置类型，比如数值`int`， `long`，`String`，`boolean`，等。

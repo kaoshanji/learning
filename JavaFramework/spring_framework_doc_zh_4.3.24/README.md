@@ -8,4 +8,6 @@
 
 [目录](SUMMARY.md)
 
+可以使用 GitBook 运行，本地在线查看：gitbook serve
+
 ----

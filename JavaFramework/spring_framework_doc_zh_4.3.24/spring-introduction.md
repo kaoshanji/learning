@@ -57,9 +57,9 @@ Spring Framework由大约20个模块组成的功能组成。这些模块分为�
 
 所述[*核心容器*](spring-core/beans-introduction.md)由以下部分组成`spring-core`， `spring-beans`，`spring-context`，`spring-context-support`，和`spring-expression` （spring表达式语言）模块。
 
-`spring-core`和`spring-beans`模块[提供框架的基本零件](spring-core/beans-introduction.md)，包括IOC和依赖注入特征。这 `BeanFactory`是工厂模式的复杂实现。它消除了对编程单例的需求，并允许您从实际的程序逻辑中分离出依赖关系的配置和规范。
+`spring-core`和`spring-beans`模块[提供框架的基本组件](spring-core/beans-introduction.md)，包括IOC和依赖注入特征。这 `BeanFactory`是工厂模式的复杂实现。它消除了对编程单例的需求，并允许您从实际的程序逻辑中分离出依赖关系的配置和规范。
 
-所述[*上下文*](spring-core/beans-context-introduction.md)（`spring-context`）模块建立由设置在基体上[`spring-core`和`spring-beans`](spring-core/beans-introduction.md)模块：它是访问一个框架式的方式是类似于一个JNDI注册表对象的装置。Context模块从Beans模块继承其功能，并添加对国际化（例如，使用资源包），事件传播，资源加载以及通过例如Servlet容器透明创建上下文的支持。Context模块还支持Java EE功能，例如EJB，JMX和基本远程处理。该`ApplicationContext`接口是语境模块的焦点。 `spring-context-support`支持将常见的第三方库集成到Spring应用程序上下文中，用于缓存（EhCache，Guava，JCache），邮件（JavaMail），调度（CommonJ，Quartz）和模板引擎（FreeMarker，JasperReports，Velocity）。
+所述[*上下文*](spring-core/beans-context-introduction.md)（`spring-context`）模块建立[`spring-core`和`spring-beans`](spring-core/beans-introduction.md)模块之上：它提供访问框架入口是类似于一个JNDI注册表对象的装置。Context模块从Beans模块继承其功能，并添加对国际化（例如，使用资源包），事件传播，资源加载以及通过例如Servlet容器透明创建上下文的支持。Context模块还支持Java EE功能，例如EJB，JMX和基本远程处理。`ApplicationContext`接口是该模块的核心。 `spring-context-support`支持将常见的第三方库集成到Spring应用程序上下文中，例如：缓存（EhCache，Guava，JCache），邮件（JavaMail），调度（CommonJ，Quartz）和模板引擎（FreeMarker，JasperReports，Velocity）。
 
 该`spring-expression`模块提供了一种功能强大的*表达式语言，*用于在运行时查询和操作对象图。它是JSP 2.1规范中指定的统一表达式语言（统一EL）的扩展。该语言支持设置和获取属性值，属性赋值，方法调用，访问数组，集合和索引器的内容，逻辑和算术运算符，命名变量以及从Spring的IoC容器中按名称检索对象。它还支持列表投影和选择以及常用列表聚合。
 
@@ -83,7 +83,7 @@ Spring框架4包括`spring-messaging`从关键抽象模块 *Spring集成*项目�
 
 ### 2.2.4数据访问/集成
 
-所述*数据访问/集成*层由JDBC，ORM，OXM，JMS和交易模块。
+所述*数据访问/集成*层由JDBC，ORM，OXM，JMS和事务模块。
 
 该`spring-jdbc`模块提供了一个[JDBC](spring-data/jdbc-jdbc-introduction.md) -abstraction层，无需进行繁琐的JDBC编码和解析数据库供应商特定的错误代码。
 
@@ -99,7 +99,7 @@ Spring框架4包括`spring-messaging`从关键抽象模块 *Spring集成*项目�
 
 ### 2.2.5 Web
 
-所述*网络*层由的`spring-web`，`spring-webmvc`，`spring-websocket`，和 `spring-webmvc-portlet`模块。
+所述*web*层由的`spring-web`，`spring-webmvc`，`spring-websocket`，和 `spring-webmvc-portlet`模块。
 
 该`spring-web`模块提供基本的面向Web的集成功能，例如多部分文件上载功能以及使用Servlet侦听器和面向Web的应用程序上下文初始化IoC容器。它还包含一个HTTP客户端以及Spring的远程支持的Web相关部分。
 
@@ -154,7 +154,7 @@ Spring的[声明式事务管理功能](spring-data/transaction-transaction-decla
 | org.springframework | spring-orm               | 对象/关系映射，包括JPA和Hibernate支持                     |
 | org.springframework | spring-oxm               | 对象/ XML映射                                             |
 | org.springframework | spring-test              | 支持单元测试和集成测试Spring组件                          |
-| org.springframework | spring-tx                | 交易基础设施，包括DAO支持和JCA集成                        |
+| org.springframework | spring-tx                | 事务基础设施，包括DAO支持和JCA集成                        |
 | org.springframework | spring-web               | 基础Web支持，包括Web客户端和基于Web的远程处理             |
 | org.springframework | spring-webmvc            | 用于Servlet堆栈的基于HTTP的模型 - 视图 - 控制器和REST端点 |
 | org.springframework | spring-webmvc-portlet    | 要在Portlet环境中使用的MVC实现                            |

@@ -152,13 +152,13 @@ public class AppConfig  {
 
 ### 7.11.3 JSR-330标准注释的局限性
 
-使用标准注释时，重要的是要知道某些重要功能不可用，如下表所示：
+使用标准注解时，重要的是要知道某些重要功能不可用，如下表所示：
 
 
 
 **表7.6。Spring组件模型元素与JSR-330变体**
 
-| 弹簧                | javax.inject。*       | javax.inject限制/评论                                        |
+| spring                | javax.inject。*       | javax.inject限制/评论                                        |
 | ------------------- | --------------------- | ------------------------------------------------------------ |
 | @Autowired          | @Inject               | `@Inject`没有'必需'属性; 可以与Java 8一起使用`Optional`。    |
 | @Component          | @Named / @ManagedBean | JSR-330不提供可组合模型，只是一种识别命名组件的方法。        |

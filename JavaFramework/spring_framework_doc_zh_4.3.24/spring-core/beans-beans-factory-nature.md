@@ -5,9 +5,9 @@
 
 要与容器的bean生命周期管理进行交互，可以实现Spring `InitializingBean`和`DisposableBean`接口。容器调用 `afterPropertiesSet()`前者，`destroy()`后者允许bean在初始化和销毁bean时执行某些操作。
 
-JSR-250 `@PostConstruct`和`@PreDestroy`注释通常被认为是在现代Spring应用程序中接收生命周期回调的最佳实践。使用这些注释意味着您的bean不会耦合到Spring特定的接口。
+JSR-250 `@PostConstruct`和`@PreDestroy`注解通常被认为是在现代Spring应用程序中接收生命周期回调的最佳实践。使用这些注解意味着您的bean不会耦合到Spring特定的接口。
 
-在内部，Spring Framework使用`BeanPostProcessor`实现来处理它可以找到的任何回调接口并调用适当的方法。如果您需要自定义功能或其他生命周期行为Spring不提供开箱即用的功能，您可以`BeanPostProcessor`自己实现。
+在内部，Spring Framework使用`BeanPostProcessor`实现来处理它可以找到的任何回调接口并调用适当的方法。如果您需要自定义功能或其他生命周期行为Spring没有提供的开箱即用功能，您可以自己实现`BeanPostProcessor`。
 
 除了初始化和销毁回调之外，Spring管理的对象还可以实现`Lifecycle`接口，以便这些对象可以参与由容器自身生命周期驱动的启动和关闭过程。
 
@@ -21,7 +21,7 @@ JSR-250 `@PostConstruct`和`@PreDestroy`注释通常被认为是在现代Spring�
 void afterPropertiesSet() throws Exception;
 ```
 
-建议您不要使用该`InitializingBean`接口，因为它会不必要地将代码耦合到Spring。或者，使用[`@PostConstruct`](beans.html#beans-postconstruct-and-predestroy-annotations)注释或指定POJO初始化方法。对于基于XML的配置元数据，可以使用该`init-method`属性指定具有void无参数签名的方法的名称。使用Java配置，您可以使用`initMethod`属性`@Bean`。
+建议您不要使用该`InitializingBean`接口，因为它会不必要地将代码耦合到Spring。或者，使用[`@PostConstruct`](beans.html#beans-postconstruct-and-predestroy-annotations)注解或指定POJO初始化方法。对于基于XML的配置元数据，可以使用该`init-method`属性指定具有void无参数签名的方法的名称。使用Java配置，您可以使用`initMethod`属性`@Bean`。
 
 ```xml
 <bean id="exampleInitBean" class="examples.ExampleBean" init-method="init"/>

@@ -16,7 +16,7 @@
 
 ### 7.2.1配置元数据
 
-如上图所示，Spring IoC容器使用一种*配置元数据*形式 ; 此配置元数据表示您作为应用程序开发人员如何告诉Spring容器在应用程序中实例化，配置和组装对象。
+如上图所示，Spring IoC容器使用一种*配置元数据*形式 ; 此配置元数据表示您作为应用程序开发人员告诉Spring容器如何在应用程序中实例化、配置和组装对象。
 
 传统上，配置元数据以简单直观的XML格式提供，本章的大部分内容用于传达Spring IoC容器的关键概念和功能。
 
@@ -119,9 +119,9 @@ ApplicationContext context = new ClassPathXmlApplicationContext（“services.xm
 </beans>
 ```
 
-在前面的例子中，外部豆定义是从三个文件加载： `services.xml`，`messageSource.xml`，和`themeSource.xml`。所有位置路径都与执行导入的定义文件相关，因此`services.xml`必须与执行导入的文件位于相同的目录或类路径位置， `messageSource.xml`而且`themeSource.xml`必须位于`resources`导入文件位置下方的位置。如您所见，忽略前导斜杠，但鉴于这些路径是相对的，最好不要使用斜杠。`<beans/>`根据Spring Schema，导入的文件的内容（包括顶级元素）必须是有效的XML bean定义。
+在前面的例子中，外部bean定义是从三个文件加载： `services.xml`，`messageSource.xml`，和`themeSource.xml`。所有位置路径都与执行导入的定义文件相关，因此`services.xml`必须与执行导入的文件位于相同的目录或类路径位置， `messageSource.xml`而且`themeSource.xml`必须位于`resources`导入文件位置下方的位置。如您所见，忽略前导斜杠，但鉴于这些路径是相对的，最好不要使用斜杠。`<beans/>`根据Spring Schema，导入的文件的内容（包括顶级元素）必须是有效的XML bean定义。
 
-import指令是beans命名空间本身提供的功能。除了普通bean定义之外的其他配置功能在Spring提供的一系列XML命名空间中可用，例如“context”和“util”命名空间。
+import指令是beans命名空间本身提供的功能。除了普通bean定义之外，Spring还有其他一系列可用XML命名空间的配置功能，例如“context”和“util”命名空间。
 
 ### 7.2.3使用容器
 

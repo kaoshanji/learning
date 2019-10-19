@@ -6,7 +6,7 @@ Spring Web MVC的请求处理工作流程`DispatcherServlet`如下图所示。�
 
 **图22.1。Spring Web MVC中的请求处理工作流程（高级）**
 
-![MVC](G:/workspaces/GitHub/kaoshanji/learning/spring_framework_doc_zh_4.3.24/images/mvc.png)
+![MVC](../images/mvc.png)
 
 它`DispatcherServlet`是一个实际的`Servlet`（它继`HttpServlet`承自基类），因此在您的Web应用程序中声明。您需要`DispatcherServlet`使用URL映射来映射您要处理的请求。以下是Servlet 3.0+环境中的标准Java EE Servlet配置：
 
@@ -50,7 +50,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 
 **图22.2。Spring Web MVC中的典型上下文层次结构**
 
-![mvc上下文层次结构](G:/workspaces/GitHub/kaoshanji/learning/spring_framework_doc_zh_4.3.24/images/mvc-context-hierarchy.png)
+![mvc上下文层次结构](../images/mvc-context-hierarchy.png)
 
 在初始化a时`DispatcherServlet`，Spring MVC 在Web应用程序的目录中查找名为 *[servlet-name] -servlet.xml*的`WEB-INF`文件，并创建在那里定义的bean，覆盖在全局范围内使用相同名称定义的任何bean的定义。
 
@@ -78,7 +78,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 
 **图22.3。Spring Web MVC中的单根上下文**
 
-![mvc根上下文](G:/workspaces/GitHub/kaoshanji/learning/spring_framework_doc_zh_4.3.24/images/mvc-root-context.png)
+![mvc根上下文](../images/mvc-root-context.png)
 
 这可以通过设置一个空的contextConfigLocation servlet init参数来配置，如下所示：
 

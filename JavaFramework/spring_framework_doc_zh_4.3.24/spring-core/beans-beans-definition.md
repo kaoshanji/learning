@@ -25,19 +25,19 @@ Spring IoC容器管理一个或多个*bean*。这些bean是使用您提供给容
 | initialization method    | the section called “Initialization callbacks” |
 | destruction method       | the section called “Destruction callbacks” |
 
-了包含有关如何创建特定bean的信息的bean定义之外，这些`ApplicationContext`实现还允许用户注册在容器外部创建的现有对象。这是通过`getBeanFactory()`返回BeanFactory实现的方法访问ApplicationContext的BeanFactory来完成的`DefaultListableBeanFactory`。`DefaultListableBeanFactory` 通过方法`registerSingleton(..)`和 支持这种注册`registerBeanDefinition(..)`。但是，典型应用程序仅适用于通过元数据bean定义定义的bean。
+除了包含有关如何创建特定bean的信息的bean定义之外，这些`ApplicationContext`实现还允许用户注册在容器外部创建的现有对象。这是通过`getBeanFactory()`返回BeanFactory实现的方法访问ApplicationContext的BeanFactory来完成的`DefaultListableBeanFactory`。`DefaultListableBeanFactory` 通过方法`registerSingleton(..)`和 支持这种注册`registerBeanDefinition(..)`。但是，典型应用程序仅适用于通过元数据bean定义的bean。
 
 每个bean都有一个或多个标识符。这些标识符在托管bean的容器中必须是唯一的。bean通常只有一个标识符，但如果它需要多个标识符，则额外的标识符可以被视为别名。
 
-在基于XML的配置元数据中，使用`id`和/或`name`属性指定bean标识符。该`id`属性允许您指定一个id。通常，这些名称是字母数字（'myBean'，'fooService'等），但也可能包含特殊字符。如果要向bean引入其他别名，还可以在`name` 属性中指定它们，用逗号（`,`），分号（`;`）或空格分隔。作为历史记录，在Spring 3.1之前的版本中，该`id`属性被定义为一种`xsd:ID`类型，它约束了可能的字符。从3.1开始，它被定义为一种`xsd:string`类型。请注意，`id`容器仍然强制实施bean 唯一性，但不再是XML解析器。
+在基于XML的配置元数据中，使用`id`和/或`name`属性指定bean标识符。该`id`属性允许您指定一个id。通常，这些名称是字母数字（'myBean'，'fooService'等），但也可能包含特殊字符。如果要向bean引入其他别名，还可以在`name` 属性中指定它们，用逗号（`,`），分号（`;`）或空格分隔。作为历史遗留，在Spring 3.1之前的版本中，该`id`属性被定义为一种`xsd:ID`类型，它约束了可能的字符。从3.1开始，它被定义为一种`xsd:string`类型。请注意，`id`容器仍然强制实施bean 唯一性，但不再是XML解析器。
 
 您不需要为bean提供名称或ID。如果没有显式提供名称或标识，则容器会为该bean生成唯一的名称。但是，如果要通过名称引用该bean，则必须通过使用`ref`元素或 Service Locator样式查找来提供名称。
 
 **Bean命名约定**
 
-惯例是在命名bean时使用标准Java约定作为实例字段名称。也就是说，bean名称以小写字母开头，从那时起就是驼峰式的。这种名称的例子将是（不带引号）`'accountManager'`， `'accountService'`，`'userDao'`，`'loginController'`，等等。
+惯例是使命名bean时使用标准Java约定作为实例字段名称。也就是说，bean名称以小写字母开头，从那时起就是驼峰式的。这种名称的例子将是（不带引号）`'accountManager'`， `'accountService'`，`'userDao'`，`'loginController'`，等等。
 
-命名bean一直使您的配置更易于阅读和理解，如果您使用的是Spring AOP，那么在将建议应用于与名称相关的一组bean时，它会有很大帮助。
+命名bean是使您的配置更易于阅读和理解，如果您使用的是Spring AOP，那么在将建议应用于与名称相关的一组bean时，它会有很大帮助。
 
 #### 在bean定义之外别名bean
 
@@ -64,7 +64,7 @@ Spring IoC容器管理一个或多个*bean*。这些bean是使用您提供给容
 
 bean定义本质上是用于创建一个或多个对象的配方。容器在被询问时查看命名bean的配方，并使用由该bean定义封装的配置元数据来创建（或获取）实际对象。
 
-如果使用基于XML的配置元数据，则指定要在元素的`class`属性中实例化的对象的类型（或类）`<bean/>`。此 `class`属性在内部是 实例`Class`上的属性`BeanDefinition`，通常是必需的。您可以通过`Class`以下两种方式之一使用该属性：
+如果使用基于XML的配置元数据，则要在元素的`class`属性中指定实例化的对象的类型（或类）`<bean/>`。此 `class`属性在内部是 实例`Class`上的属性`BeanDefinition`，通常是必需的。您可以通过`Class`以下两种方式之一使用该属性：
 
 - 通常，在容器本身通过反向调用其构造函数直接创建bean的情况下指定要构造的bean类，稍微等同于使用`new`运算符的Java代码。
 - 要指定包含`static`将被调用以创建对象的工厂方法的实际类，在不太常见的情况下，容器在类上调用 `static` *工厂*方法来创建bean。从调用`static`工厂方法返回的对象类型可以完全是同一个类或另一个类。

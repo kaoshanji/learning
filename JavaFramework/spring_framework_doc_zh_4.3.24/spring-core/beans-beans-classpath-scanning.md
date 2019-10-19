@@ -1,18 +1,18 @@
 # 7.10 类扫描和组件管理
 
-本章中的大多数示例都使用XML来指定`BeanDefinition`在Spring容器中生成每个元素的配置元数据。上一节（第7.9节“基于注释的容器配置”）演示了如何通过源级注释提供大量配置元数据。但是，即使在这些示例中，“基本”bean定义也在XML文件中明确定义，而注释仅驱动依赖项注入。本节描述了隐式检测*候选组件*的选项 通过扫描类路径。候选组件是与筛选条件匹配的类，并且具有向容器注册的相应bean定义。这消除了使用XML执行bean注册的需要; 相反，您可以使用注释（例如`@Component`），AspectJ类型表达式或您自己的自定义筛选条件来选择哪些类将使用容器注册bean定义。
+本章中的大多数示例都使用XML来指定`BeanDefinition`在Spring容器中生成每个元素的配置元数据。上一节（第7.9节“基于注解的容器配置”）演示了如何通过源级注解提供大量配置元数据。但是，即使在这些示例中，“基本”bean定义也在XML文件中明确定义，而注解仅驱动依赖项注入。本节描述了隐式检测*候选组件*的选项 通过扫描类路径。候选组件是与筛选条件匹配的类，并且具有向容器注册的相应bean定义。这消除了使用XML执行bean注册的需要; 相反，您可以使用注解（例如`@Component`），AspectJ类型表达式或您自己的自定义筛选条件来选择哪些类将使用容器注册bean定义。
 
-从Spring 3.0开始，Spring JavaConfig项目提供的许多功能都是核心Spring Framework的一部分。这允许您使用Java而不是使用传统的XML文件来定义bean。看看的`@Configuration`，`@Bean`， `@Import`，和`@DependsOn`注释有关如何使用这些新功能的例子。
+从Spring 3.0开始，Spring JavaConfig项目提供的许多功能都是核心Spring Framework的一部分。这允许您使用Java而不是使用传统的XML文件来定义bean。看看的`@Configuration`，`@Bean`， `@Import`，和`@DependsOn`注解有关如何使用这些新功能的例子。
 
-### 7.10.1 @Component和进一步的构造型注释
+### 7.10.1 @Component和进一步的构造型注解
 
-的`@Repository`注释是用于满足所述角色或任何类的标记 *构造型*的存储库（也被称为数据访问对象或DAO）的。该标记的用途包括自动翻译异常，如 第20.2.2节“异常翻译”中所述。
+`@Repository`注解是用于满足所述角色或任何类的标记 *构造型*的存储库（也被称为数据访问对象或DAO）的。该标记的用途包括自动翻译异常，如 第20.2.2节“异常翻译”中所述。
 
-Spring提供进一步典型化注解：`@Component`，`@Service`，和 `@Controller`。`@Component`是任何Spring管理组件的通用构造型。 `@Repository`，`@Service`和，并且`@Controller`是`@Component`更具体的用例的特化，例如，分别在持久性，服务和表示层中。因此，你可以用你的注解组件类 `@Component`，但如果用注解它们`@Repository`，`@Service`或者`@Controller` ，你的类能更好地被工具处理，或与切面进行关联。例如，这些刻板印象注释成为切入点的理想目标。这也有可能是`@Repository`，`@Service`和`@Controller`可能会在Spring Framework的未来版本中携带其他语义。因此，如果您在使用`@Component`或`@Service`服务层之间进行选择，`@Service`显然是更好的选择。同样，如上所述，`@Repository`已经支持作为持久层中自动异常转换的标记。
+Spring提供进一步典型化注解：`@Component`，`@Service`，和 `@Controller`。`@Component`是任何Spring管理组件的通用构造型。 `@Repository`，`@Service`和，并且`@Controller`是`@Component`更具体的用例的特化，例如，分别在持久性，服务和表示层中。因此，你可以用你的注解组件类 `@Component`，但如果用注解它们`@Repository`，`@Service`或者`@Controller` ，你的类能更好地被工具处理，或与切面进行关联。例如，这些刻板印象注解成为切入点的理想目标。这也有可能是`@Repository`，`@Service`和`@Controller`可能会在Spring Framework的未来版本中携带其他语义。因此，如果您在使用`@Component`或`@Service`服务层之间进行选择，`@Service`显然是更好的选择。同样，如上所述，`@Repository`已经支持作为持久层中自动异常转换的标记。
 
-### 7.10.2元注释
+### 7.10.2元注解
 
-Spring提供的许多注释都可以在您自己的代码中用作*元注释*。元注释只是一个可以应用于另一个注释的注释。例如，`@Service`上面提到的注释是元注释的`@Component`：
+Spring提供的许多注解都可以在您自己的代码中用作*元注解*。元注解只是一个可以应用于另一个注解的注解。例如，`@Service`上面提到的注解是元注解的`@Component`：
 
 ```java
 @Target(ElementType.TYPE)
@@ -25,9 +25,9 @@ public @interface Service {
 }
 ```
 
-元注解也可以组合以创建*组合注释*。例如，`@RestController`从Spring MVC的注解*组成*的`@Controller`和 `@ResponseBody`。
+元注解也可以组合以创建*组合注解*。例如，`@RestController`从Spring MVC的注解*组成*的`@Controller`和 `@ResponseBody`。
 
-此外，组合注释可以选择性地从元注释重新声明属性以允许用户定制。当您只想公开元注释属性的子集时，这可能特别有用。例如，Spring的 `@SessionScope`注释将范围名称硬编码为`session`但仍允许自定义`proxyMode`。
+此外，组合注解可以选择性地从元注解重新声明属性以允许用户定制。当您只想公开元注解属性的子集时，这可能特别有用。例如，Spring的 `@SessionScope`注解将范围名称硬编码为`session`但仍允许自定义`proxyMode`。
 
 ```java
 @Target({ElementType.TYPE, ElementType.METHOD})
@@ -125,19 +125,19 @@ public class AppConfig  {
 
 ### 7.10.4使用过滤器自定义扫描
 
-默认情况下，类注有`@Component`，`@Repository`，`@Service`， `@Controller`，或者本身都标注有一个自定义的注释`@Component`是唯一检测到的候选组件。但是，您可以通过应用自定义筛选器来修改和扩展此行为。将它们添加为注释的*includeFilters*或*excludeFilters* 参数`@ComponentScan`（或作为 元素的*include-filter*或*exclude-filter*子`component-scan`元素）。每个过滤器元素都需要`type` 和`expression`属性。下表介绍了筛选选项。
+默认情况下，类注有`@Component`，`@Repository`，`@Service`， `@Controller`，或者本身都标注有一个自定义的注解`@Component`是唯一检测到的候选组件。但是，您可以通过应用自定义筛选器来修改和扩展此行为。将它们添加为注解的*includeFilters*或*excludeFilters* 参数`@ComponentScan`（或作为 元素的*include-filter*或*exclude-filter*子`component-scan`元素）。每个过滤器元素都需要`type` 和`expression`属性。下表介绍了筛选选项。
 
 **表7.5。过滤类型**
 
 | 过滤器类型         | 示例表达                     | 描述                                                         |
 | ------------------ | ---------------------------- | ------------------------------------------------------------ |
-| annotation（默认） | `org.example.SomeAnnotation` | 要在目标组件中的类型级别出现的注释。                         |
+| annotation（默认） | `org.example.SomeAnnotation` | 要在目标组件中的类型级别出现的注解。                         |
 | assignable         | `org.example.SomeClass`      | 目标组件可分配给（扩展/实现）的类（或接口）。                |
 | aspectj            | `org.example..*Service+`     | 要由目标组件匹配的AspectJ类型表达式。                        |
 | regex              | `org\.example\.Default.*`    | 要由目标组件类名匹配的正则表达式。                           |
 | custom             | `org.example.MyTypeFilter`   | `org.springframework.core.type .TypeFilter`接口的自定义实现。 |
 
-以下示例显示忽略所有`@Repository`注释并使用“存根”存储库的配置。
+以下示例显示忽略所有`@Repository`注解并使用“存根”存储库的配置。
 
 ```java
 @Configuration
@@ -162,11 +162,11 @@ public class AppConfig {
 </beans>
 ```
 
-您还可以通过设置`useDefaultFilters=false`注释或提供元素`use-default-filters="false"`属性来禁用默认过滤器`<component-scan/>`。这将在关闭对使用注解的类自动检测`@Component`，`@Repository`， `@Service`，`@Controller`，或`@Configuration`。
+您还可以通过设置`useDefaultFilters=false`注解或提供元素`use-default-filters="false"`属性来禁用默认过滤器`<component-scan/>`。这将在关闭对使用注解的类自动检测`@Component`，`@Repository`， `@Service`，`@Controller`，或`@Configuration`。
 
 ### 7.10.5在组件中定义bean元数据
 
-Spring组件还可以向容器提供bean定义元数据。您可以使用与`@Bean`用于在带`@Configuration` 注释的类中定义bean元数据的相同注释来执行此操作。这是一个简单的例子：
+Spring组件还可以向容器提供bean定义元数据。您可以使用与`@Bean`用于在带`@Configuration` 注解的类中定义bean元数据的相同注解来执行此操作。这是一个简单的例子：
 
 ```java
 @Component
@@ -184,9 +184,9 @@ public class FactoryMethodComponent {
 }
 ```
 
-此类是一个Spring组件，其`doWork()`方法中包含特定于应用程序的代码 。但是，它还提供了一个bean定义，该定义具有引用该方法的工厂方法`publicInstance()`。该`@Bean`注释标识工厂方法和其它bean定义特性，如通过一个限定值`@Qualifier`注释。可以指定其他方法级别的注解是 `@Scope`，`@Lazy`和自定义限定器注解。
+此类是一个Spring组件，其`doWork()`方法中包含特定于应用程序的代码 。但是，它还提供了一个bean定义，该定义具有引用该方法的工厂方法`publicInstance()`。该`@Bean`注解标识工厂方法和其它bean定义特性，如通过一个限定值`@Qualifier`注解。可以指定其他方法级别的注解是 `@Scope`，`@Lazy`和自定义限定器注解。
 
-除了它对组件初始化的作用外，`@Lazy`注释还可以放在标有`@Autowired`或的注入点上`@Inject`。在这种情况下，它会导致注入惰性解析代理。
+除了它对组件初始化的作用外，`@Lazy`注解还可以放在标有`@Autowired`或的注入点上`@Inject`。在这种情况下，它会导致注入惰性解析代理。
 
 如前所述，支持自动装配的字段和方法，并支持自动装配`@Bean`方法：
 
@@ -226,7 +226,7 @@ public class FactoryMethodComponent {
 }
 ```
 
-该示例将`String`method参数自动装配`country`到`age` 另一个名为的bean 的属性值`privateInstance`。Spring Expression Language元素通过符号定义属性的值`#{ <expression> }`。对于`@Value` 注释，表达式解析器预先配置为在解析表达式文本时查找bean名称。
+该示例将`String`method参数自动装配`country`到`age` 另一个名为的bean 的属性值`privateInstance`。Spring Expression Language元素通过符号定义属性的值`#{ <expression> }`。对于`@Value` 注解，表达式解析器预先配置为在解析表达式文本时查找bean名称。
 
 从Spring Framework 4.3开始，您还可以声明类型的工厂方法参数 `InjectionPoint`（或其更具体的子类`DependencyDescriptor`），以便访问触发创建当前bean的请求注入点。请注意，这仅适用于实例创建bean实例，而不适用于注入现有实例。因此，此功能对原型范围的bean最有意义。对于其他作用域，工厂方法只会看到触发在给定作用域中创建新bean实例的注入点：例如，触发创建惰性单例bean的依赖项。在这种情况下，使用提供的注入点元数据和语义关注。
 
@@ -255,9 +255,9 @@ public class FactoryMethodComponent {
 
 ### 7.10.6命名自动检测的组件
 
-当组件作为扫描过程的一部分自动检测时，其bean名称由该扫描程序`BeanNameGenerator`已知的策略生成。默认情况下，任何Spring刻板印象注释（`@Component`，`@Repository`，`@Service`，和 `@Controller`包含）*的名字* `value`将因此提供的名字相应的bean定义。
+当组件作为扫描过程的一部分自动检测时，其bean名称由该扫描程序`BeanNameGenerator`已知的策略生成。默认情况下，任何Spring刻板印象注解（`@Component`，`@Repository`，`@Service`，和 `@Controller`包含）*的名字* `value`将因此提供的名字相应的bean定义。
 
-如果此类注释不包含任何*名称* `value`或任何其他检测到的组件（例如自定义过滤器发现的那些组件），则默认的bean名称生成器将返回未大写的非限定类名称。例如，如果检测到以下组件类，则名称将为：`myMovieLister`和`movieFinderImpl`：
+如果此类注解不包含任何*名称* `value`或任何其他检测到的组件（例如自定义过滤器发现的那些组件），则默认的bean名称生成器将返回未大写的非限定类名称。例如，如果检测到以下组件类，则名称将为：`myMovieLister`和`movieFinderImpl`：
 
 ```java
 @Service("myMovieLister")
@@ -290,11 +290,11 @@ public class AppConfig {
 </beans>
 ```
 
-作为一般规则，考虑在其他组件可能对其进行显式引用时使用注释指定名称。另一方面，只要容器负责接线，自动生成的名称就足够了。
+作为一般规则，考虑在其他组件可能对其进行显式引用时使用注解指定名称。另一方面，只要容器负责接线，自动生成的名称就足够了。
 
 ### 7.10.7为自动检测的组件提供范围
 
-与Spring管理的组件一样，自动检测组件的默认和最常见的范围是`singleton`。但是，有时您需要一个可以通过`@Scope`注释指定的不同范围。只需在注释中提供范围的名称：
+与Spring管理的组件一样，自动检测组件的默认和最常见的范围是`singleton`。但是，有时您需要一个可以通过`@Scope`注解指定的不同范围。只需在注解中提供范围的名称：
 
 ```java
 @Scope("prototype")
@@ -304,11 +304,11 @@ public class MovieFinderImpl implements MovieFinder {
 }
 ```
 
-`@Scope`注释仅在具体bean类（对于带注释的组件）或工厂方法（对于`@Bean`方法）上进行了内省。与XML bean定义相比，没有bean定义继承的概念，类级别的继承层次结构与元数据目的无关。
+`@Scope`注解仅在具体bean类（对于带注解的组件）或工厂方法（对于`@Bean`方法）上进行了内省。与XML bean定义相比，没有bean定义继承的概念，类级别的继承层次结构与元数据目的无关。
 
-有关特定于Web的范围（如Spring上下文中的“request”/“session”）的详细信息，请参见第7.5.4节“请求，会话，全局会话，应用程序和WebSocket范围”。与这些范围的预构建注释一样，您也可以使用Spring的元注释方法编写自己的范围注释：例如，使用元注释的自定义注释`@Scope("prototype")`，可能还会声明自定义范围代理模式。
+有关特定于Web的范围（如Spring上下文中的“request”/“session”）的详细信息，请参见第7.5.4节“请求，会话，全局会话，应用程序和WebSocket范围”。与这些范围的预构建注解一样，您也可以使用Spring的元注解方法编写自己的范围注解：例如，使用元注解的自定义注解`@Scope("prototype")`，可能还会声明自定义范围代理模式。
 
-要为范围解析提供自定义策略而不是依赖基于注释的方法，请实现 [`ScopeMetadataResolver`](https://docs.spring.io/spring-framework/docs/4.3.24.RELEASE/javadoc-api/org/springframework/context/annotation/ScopeMetadataResolver.html) 接口，并确保包含默认的无参数构造函数。然后，在配置扫描程序时提供完全限定的类名：
+要为范围解析提供自定义策略而不是依赖基于注解的方法，请实现 [`ScopeMetadataResolver`](https://docs.spring.io/spring-framework/docs/4.3.24.RELEASE/javadoc-api/org/springframework/context/annotation/ScopeMetadataResolver.html) 接口，并确保包含默认的无参数构造函数。然后，在配置扫描程序时提供完全限定的类名：
 
 ```java
 @Configuration
@@ -340,9 +340,9 @@ public class AppConfig {
 </beans>
 ```
 
-### 7.10.8提供带注释的限定符元数据
+### 7.10.8提供带注解的限定符元数据
 
-在`@Qualifier`注释中讨论[第7.9.4，“微调基于注解的自动连接带有各种限制条件”](beans.html#beans-autowired-annotation-qualifiers)。该部分中的示例演示了`@Qualifier`在解析自动线候选时使用注释和自定义限定符注释来提供细粒度控制。因为这些示例基于XML bean定义，所以使用XML中 元素的元素`qualifier`或`meta`子元素在候选bean定义上提供限定符元数据`bean`。当依赖类路径扫描来自动检测组件时，您可以在候选类上为限定符元数据提供类型级注释。以下三个示例演示了此技术：
+在`@Qualifier`注解中讨论[第7.9.4，“微调基于注解的自动连接带有各种限制条件”](beans.html#beans-autowired-annotation-qualifiers)。该部分中的示例演示了`@Qualifier`在解析自动线候选时使用注解和自定义限定符注解来提供细粒度控制。因为这些示例基于XML bean定义，所以使用XML中 元素的元素`qualifier`或`meta`子元素在候选bean定义上提供限定符元数据`bean`。当依赖类路径扫描来自动检测组件时，您可以在候选类上为限定符元数据提供类型级注解。以下三个示例演示了此技术：
 
 ```Java
 @Component
@@ -368,5 +368,5 @@ public class CachingMovieCatalog implements MovieCatalog {
 }
 ```
 
-与大多数基于注释的备选方案一样，请记住注释元数据绑定到类定义本身，而XML的使用允许多个*相同类型的* bean 在其限定符元数据中提供变体，因为每个元数据都是按照 - 实例而不是每班。
+与大多数基于注解的备选方案一样，请记住注解元数据绑定到类定义本身，而XML的使用允许多个*相同类型的* bean 在其限定符元数据中提供变体，因为每个元数据都是按照 - 实例而不是每班。
 
