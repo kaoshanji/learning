@@ -1,12 +1,17 @@
-# Java 框架
+# 框架
 
-读 Java 框架的一点理解，看别人的东西还是需要思考一下。
+读框架的一点理解，看别人的东西还是需要思考一下。
 
 抽象：数据支撑、逻辑驱动
 
 主要内容：
+- 列表
 - 角度：如果让你实现上述框架，你该怎么做？
 - 控制源码
+
+##  列表
+- [mybatis 3.5.1](mybatis_source_3.5.1/README.md)
+- [spring framework 4.3.24](spring_framework_source_4.3.24/README.md)
 
 
 ##  角度
@@ -19,7 +24,7 @@
 
 分析一下编码的过程，套路到这里来。
 
-第一步：定位，解决什么问题
+第一步：定位，解决什么问题，理论背景
 
 第二步：示例，使用演示
 
@@ -58,7 +63,9 @@ MyBatis 项目是一个 Maven 项目，由本身和父项目组成。
 
 ![2019080901](images/2019080901.png)
 
-- Tomcat 8.5
+- Tomcat 9.x
+
+[Tomcat9源代码浅析-环境搭建](https://blog.csdn.net/daiwuliang/article/details/101674451)
 
 
 ##  阅读准备
