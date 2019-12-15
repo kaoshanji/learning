@@ -21,7 +21,7 @@
 
 
 ##  参考资料
-- [官方文档](../spring_framework_doc_zh_4.3.24/README.md)
+- [官方文档](../../doc_zh/spring_framework_doc_zh_4.3.24/README.md)
 - Spring 实战(第4版)
 - SPRING技术内幕：深入解析SPRING架构与设计原理
 - SprIng框架高级编程
