@@ -1,37 +1,15 @@
-# Java核心技术
+# Java 技术
 
+>   对应 processon 里的`编程语言技术栈/Java技术栈`
 
-1.  语法API：语法本身介绍和演示
+>   来自 JDK API ，关注你需要关注的，绝对不是全部
 
-
-##  语法库
-- [面向对象](object/README.md)
-- [动态特性](dynamic/README.md)
-
-
-##  平台抽象
-- [JDBC](jdbc.md)
-- [输入输出：I/O](io/README.md)
-- [并发](concurrent/README.md)
-- [集合](collection/README.md)
-- [JVM](jvm/README.md)
-  - 内存模型
-
-
-2.  进阶：某些语法在框架使用示例
-
-- [JDK](jdk/README.md)
-- 设计模式
-
-3.  深入
-- 有用的建议
-- [Java性能调优](performance/README.md)
-
-
-----
-
-##  备注
-- 极客时间：Java核心技术36讲
+##  目录
+-   [API](j001/README.md)
+-   [JVM](j002/README.md)
+    -   内存模型
+-   [性能调优](j003/README.md)
+-   Java框架
 
 
 ----
