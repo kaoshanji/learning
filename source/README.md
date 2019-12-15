@@ -1,4 +1,6 @@
-# 框架
+# 源码
+
+>   记录读源码过程
 
 读框架的一点理解，看别人的东西还是需要思考一下。
 
@@ -38,42 +40,4 @@
 
 5.  整体结构：架构结构，代码从何写起，模块怎么划分，接口、类和方法的组织定义，可能有哪些扩展
 
-
-##  控制源码
-
-在该项目的GitHub里 `Fork` 到自己的账户下，并且依据指定版本创建一个自定义分支，后面代码阅读就是以这个分支为依据，比如：调试、修改、添加注释等。
-
-示例：[spring-framework](https://github.com/spring-projects/spring-framework)，Fork 到自己的[账户](https://github.com/kaoshanji/spring-framework)下，选择分支 `v4.3.24.RELEASE` 作为指定分支，并创建[自己的分支](https://github.com/kaoshanji/spring-framework/tree/kaoshanji-4.3.24)，如此一来，这个分支就由我完全控制了，并不会被官方更新，版本环境被固定，后面就可以进行了。
-
-`测试类`是很好的验证调试方式
-
-- MyBatis 3.5.1 源码编译
-
-MyBatis 项目是一个 Maven 项目，由本身和父项目组成。
-
-下载下来之后，在 pom.xml 看看 `parent` 指定的版本，也下载到同级目录
-
-然后，当做普通 Maven 项目导入即可，最好使用 IDEA。
-
-- Spring framework 4.3.24 源码编译
-
-安装 JDK 1.8，网络可以观看 8M蓝光直播 最好。
-
-进入文件夹 win/Linux 直接运行 import-into-eclipse.bat/.sh，一路下一步，记最为顺利的一次。
-
-![2019080901](images/2019080901.png)
-
-- Tomcat 9.x
-
-[Tomcat9源代码浅析-环境搭建](https://blog.csdn.net/daiwuliang/article/details/101674451)
-
-
-##  阅读准备
-
-源码环境是一个工作空间，但是还需要一个框架使用示例项目，作为演示。
-
-选择一个线索，最好是能从头开始出现，串联各个环节的那种。
-
-框架类/接口继承关系图可以从IDEA获取，方法调用之类 IDEA/STS 都可以
-
-导入项目之前设置IDE`编码`，`编码`vc，切换电脑可能会导致乱码，比如STS从win切换到mac下，所以，请统一设置成`UTF-8`!
+----

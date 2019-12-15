@@ -1,10 +1,11 @@
 # 消息中间件
 
+>   对应 processon 里的`消息队列技术栈`
+
 分布式系统是其组件分布在连网的计算机上，组件之间通过传递消息进行通信和动作协调的系统。
 
 
-
-##  章节
+##  目录
 - [概述](overview.md)
 - [RabbitMQ](rabbitmq/README.md)
 - KafKa
