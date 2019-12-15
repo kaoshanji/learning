@@ -23,9 +23,9 @@
 
 
 ##  [读源码](source/README.md)
-- [mybatis 3.5.1](source/mybatis_source_3.5.1/README.md)
-- [spring framework 4.3.24](source/spring_framework_source_4.3.24/README.md)
-- [Apache Tomcat 9](source/apache_tomcat_source_9/README.md)
+-   [mybatis 3.5.1](source/mybatis_source_3.5.1/README.md)
+-   [spring framework 4.3.24](source/spring_framework_source_4.3.24/README.md)
+-   [Apache Tomcat 9](source/apache_tomcat_source_9/README.md)
 
 
 ##  谷歌翻译
@@ -39,7 +39,7 @@
 
 
 ##  [应用](app/README.md)
--   [理论](app/distributedTheory/README.md) 
+-   [分布式](app/distributed/README.md) 
 
 ##  其他
 -   [存稿](bbb/README.md)
