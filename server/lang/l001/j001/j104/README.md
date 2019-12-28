@@ -10,6 +10,10 @@ Linux 上所有的设备都是文件，包括网络。
 
 在Java中，所有I/O都是通过输入/输出流来处理的，这些流使你可以按照统一的方式来处理与各种数据源之间的通信，例如文件、网络连接和内存块。
 
+这么多的类接口都是为了解决一个问题：I/O，主要分为两类，数据传输的`方式`(磁盘/网络)和传输数据的`格式`(字节/字符/)，然后，针对特定场景进行优化(BIO/NIO/AIO)
+
+
+
 ##  目录
 -   [编程里的输入/输出](http://assets.processon.com/chart_image/5de475dae4b0d1f8f2c71681.png)
 -   [Java里的输入/输出](http://assets.processon.com/chart_image/5ba305fce4b0534c9be411a6.png)
@@ -24,11 +28,18 @@ Linux 上所有的设备都是文件，包括网络。
 -   [NIO UML 图](http://assets.processon.com/chart_image/5dfe1404e4b0250e8ae62d94.png)
 
 
+##  我要输出：bbb
+
 
 ##  参考资料
--   [Java核心技术 卷2 高级特性 原书第10版](b001/README.md)
-
-
+-   [Java核心技术 卷2 高级特性 原书第10版](books/b001/README.md)
+-   [Java编程思想 第4版](books/b002/README.md)
+-   [Java程序员修炼之道](books/b003/README.md)
+-   [深入理解Java 7：核心技术与最佳实践](books/b004/README.md)
+-   [Java编程的逻辑](books/b005/README.md)
+-   [Java特种兵上](books/b006/README.md)
+-   [Java技术手册 第6版](books/b007/README.md)
+-   [深入分析Java Web技术内幕](books/b008/README.md)
 
 
 
