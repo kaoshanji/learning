@@ -16,8 +16,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 /**
- * @author kaoshanji
  * FileChannel 示例
+ * @author kaoshanji
  * @time 2020-01-05 16:01
  */
 public class FileChannelDemo {

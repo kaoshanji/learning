@@ -7,8 +7,8 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
 /**
- * @author kaoshanji
  * ServerSocket 示例
+ * @author kaoshanji
  * @time 2020-01-05 23:11
  */
 public class ServerSocketDemo {
