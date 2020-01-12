@@ -3,11 +3,19 @@ package top.kaoshanji.leaning.jdkx.io;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.DosFileAttributeView;
 import java.nio.file.attribute.DosFileAttributes;
 import java.nio.file.attribute.FileTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Files 示例
@@ -104,6 +112,47 @@ public class FilesDemo {
             }
             key.reset();
         }
+    }
+
+
+    /**
+     * 文件操作的实用方法
+     * @throws IOException
+     */
+    public void manipulateFiles() throws IOException {
+        Path newFile = Files.createFile(Paths.get("new.txt").toAbsolutePath());
+
+        List<String> content = new ArrayList<>();
+        content.add("Hello");
+        content.add("World");
+
+        Files.write(newFile, content, Charset.forName("UTF-8"));
+        Files.size(newFile);
+
+        byte [] bytes = Files.readAllBytes(newFile);
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        Files.copy(newFile, output);
+
+        Files.delete(newFile);
+    }
+
+
+    /**
+     * 基于 zip/jar 文件系统实现的添加新文件到已有 zip 文件的做法
+     * @param zipFile
+     * @param fileToAdd
+     * @throws IOException
+     */
+    public void addFileToZip(File zipFile, File fileToAdd) throws IOException {
+        Map<String, String> env = new HashMap<>();
+        env.put("create", "true");
+
+        FileSystem fs = FileSystems.newFileSystem(URI.create("jar:" + zipFile.toURI()), env);
+        Path pathToAddFile = fileToAdd.toPath();
+        Path pathInZipFile = fs.getPath("/" + fileToAdd.getName());
+
+        Files.copy(pathToAddFile, pathInZipFile, StandardCopyOption.REPLACE_EXISTING);
+
     }
 
 }

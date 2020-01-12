@@ -21,7 +21,7 @@ import java.util.Set;
  * @author kaoshanji
  * @time 2020-01-05 23:19
  */
-public class SelectorDemo {
+public class SelectorClientDemo {
 
     /**
      * 多路复用

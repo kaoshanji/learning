@@ -8,12 +8,11 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
-import java.nio.channels.Channels;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
-import java.nio.channels.ReadableByteChannel;
+import java.nio.channels.*;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * FileChannel 示例
@@ -144,17 +143,22 @@ public class FileChannelDemo {
     }
 
 
+    /**
+     * 向异步文件通道中写入数据
+     * 使用 Future 接收处理结果
+     * @throws IOException
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    public void asyncWrite() throws IOException, ExecutionException, InterruptedException {
+        AsynchronousFileChannel channel = AsynchronousFileChannel.open(Paths.get("large.bin"),
+                StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        ByteBuffer buffer = ByteBuffer.allocate(32 * 1024 * 1024);
+        Future<Integer> result = channel.write(buffer, 0);
 
-
-
-
-
-
-
-
-
-
-
+        // 其他操作
+        Integer len = result.get();
+    }
 
 
 
