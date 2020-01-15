@@ -4,7 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 /**
  * Internet 示例
@@ -84,7 +87,31 @@ public class InternetDemo {
         logger.info("是否是一个网站范围组播地址:"+address.isMCSiteLocal());
         logger.info("是否是一个子网范围组播地址:"+address.isMCLinkLocal());
         logger.info("是否是一个本地接口组播地址:"+address.isMCNodeLocal());
+    }
 
+
+    /**
+     * 列出所有网络接口
+     * @throws SocketException
+     */
+    public void interfaceList() throws SocketException {
+        Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+        while (interfaces.hasMoreElements()) {
+            NetworkInterface ni = interfaces.nextElement();
+            logger.info(ni.toString());
+        }
+    }
+
+    /**
+     * 一个网络接口对应多个IP地址
+     * @throws SocketException
+     */
+    public void getInetAddressesByeth0() throws SocketException {
+        NetworkInterface eth0 = NetworkInterface.getByName("eth0");
+        Enumeration addresses = eth0.getInetAddresses();
+        while (addresses.hasMoreElements()) {
+            logger.info(addresses.nextElement().toString());
+        }
     }
 
 
