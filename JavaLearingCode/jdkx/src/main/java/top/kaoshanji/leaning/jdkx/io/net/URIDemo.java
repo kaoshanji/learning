@@ -3,6 +3,7 @@ package top.kaoshanji.leaning.jdkx.io.net;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -14,6 +15,55 @@ import java.net.URL;
 public class URIDemo {
 
     private final static Logger logger = LoggerFactory.getLogger(URIDemo.class);
+
+
+    /**
+     * 下载一个对象
+     * @param url
+     * @throws IOException
+     */
+    public void contentGetter(String url) throws IOException {
+        URL u = new URL(url);
+        Object o = u.getContent();
+        logger.info("I got a " + o.getClass().getName());
+    }
+
+    /**
+     * 下载一个Web页面
+     * @param url
+     */
+    public void sourceViewer(String url) {
+        InputStream in = null;
+
+        try {
+            // 打开 URL 进行读取
+            URL u = new URL(url);
+            in = u.openStream();
+
+            // 缓冲输入以提高性能
+            in = new BufferedInputStream(in);
+
+            // 将 InputStream 串链到一个 Reader
+            Reader r = new InputStreamReader(in);
+            int c;
+            while ((c = r.read()) != -1) {
+                logger.info(String.valueOf((char)c));
+            }
+
+        } catch (MalformedURLException ex) {
+            logger.error(url + " 不是一个 URL 协议");
+        } catch (IOException ex) {
+            logger.error(ex.getMessage());
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
+            }
+        }
+    }
 
 
     /**

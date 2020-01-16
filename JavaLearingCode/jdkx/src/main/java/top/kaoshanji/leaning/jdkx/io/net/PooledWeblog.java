@@ -27,6 +27,8 @@ public class PooledWeblog {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(NUM_THREADS);
+
+        // 这个集合好像不对，应该使用并发包里面的
         Queue<LogEntry> results = new LinkedList<>();
 
         try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(args[0]), "UTF-8"))){
