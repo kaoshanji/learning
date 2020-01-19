@@ -10,7 +10,6 @@
 -   [API](j001/README.md)
 -   [JVM](j002/README.md)
     -   内存模型
--   [性能调优](j003/README.md)
 -   Java框架
 
 
