@@ -16,6 +16,13 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>top.kaoshanji.JavaLearingCode</groupId>
+            <artifactId>common</artifactId>
+            <version>1</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -1,78 +1,91 @@
 package top.kaoshanji.leaning.jdkx.io;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
-import java.nio.channels.*;
-import java.util.concurrent.Executors;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Date;
 
 /**
  * ServerSocket 示例
  * @author kaoshanji
- * @time 2020-01-05 23:11
+ * @time 2020-01-20 20:55
  */
 public class ServerSocketDemo {
 
+    private final static Logger logger = LoggerFactory.getLogger(ServerSocketDemo.class);
+
+
     /**
-     * 套接字：阻塞式服务端
+     * daytime服务器
      */
-    public void startSimpleServer() throws IOException {
-        // 创建 服务端套接字对象
-        ServerSocketChannel channel = ServerSocketChannel.open();
-        // 绑定端口
-        channel.bind(new InetSocketAddress("localhost", 10800));
-        // 死循环中监听
-        while (true) {
-            SocketChannel sc = channel.accept();
-            sc.write(ByteBuffer.wrap("Hello".getBytes("UTF-8")));
+    public void dayTimeServer() {
+        int port = 1313; // 端口最好大于 1024
+        try (ServerSocket server = new ServerSocket(port)){
+            // 著名的死循环..
+            while (true) {
+                // 单个请求..循环内，不影响下一个请求
+                try (Socket connection = server.accept()){
+                    Writer out = new OutputStreamWriter(connection.getOutputStream());
+                    Date now = new Date();
+                    out.write(now.toString() +"\r\n");
+                    out.flush();
+                } catch (IOException ex) {
+                    logger.error("..这个请求挂了..");
+                }
+            }
+        } catch (IOException ex) {
+            logger.error("整个服务挂了.."+ex.getMessage());
         }
     }
 
-
     /**
-     * 套接字：异步套接字通道
-     * @throws IOException
+     * 时间服务器：遵循 RFC 868 时间协议的迭代时间服务器
      */
-    public void startAsyncSimpleServer() throws IOException {
-
-        // 异步通道的分组，关联一个线程池
-        AsynchronousChannelGroup group = AsynchronousChannelGroup.withFixedThreadPool(10, Executors.defaultThreadFactory());
-        final AsynchronousServerSocketChannel serverChannel = AsynchronousServerSocketChannel.open(group).bind(new InetSocketAddress(10080));
-
-        // 接受来自客户端的连接
-        serverChannel.accept(null, new CompletionHandler<AsynchronousSocketChannel, Void>() {
-
-            /**
-             * 当有新连接建立时
-             * @param clientChannel
-             * @param attachment
-             */
-            @Override
-            public void completed(AsynchronousSocketChannel clientChannel, Void attachment) {
-                serverChannel.accept(null, this);
-
-                try {
-                    clientChannel.write(ByteBuffer.wrap("Hello".getBytes("UTF-8")));
-                    clientChannel.close();
+    public void timeServer() {
+        int port = 1337;
+        long differenceBetweenEpochs = 2208988800L;
+        try (ServerSocket server = new ServerSocket(port)) {
+            while (true) {
+                try (Socket connection = server.accept()) {
+                    OutputStream out = connection.getOutputStream();
+                    Date now = new Date();
+                    long msSince1970 = now.getTime();
+                    long secondsSince1970 = msSince1970/1000;
+                    long secondsSince1900 = secondsSince1970
+                            + differenceBetweenEpochs;
+                    byte[] time = new byte[4];
+                    time[0]
+                            = (byte) ((secondsSince1900 & 0x00000000FF000000L) >> 24);
+                    time[1]
+                            = (byte) ((secondsSince1900 & 0x0000000000FF0000L) >> 16);
+                    time[2]
+                            = (byte) ((secondsSince1900 & 0x000000000000FF00L) >> 8);
+                    time[3] = (byte) (secondsSince1900 & 0x00000000000000FFL);
+                    out.write(time);
+                    out.flush();
                 } catch (IOException ex) {
-                    ex.printStackTrace();
+                    logger.error("..这个请求挂了..");
                 }
             }
+        } catch (IOException ex) {
+            logger.error("整个服务挂了.."+ex.getMessage());
+        }
 
-            /**
-             * 出现错误了..
-             * @param throwable
-             * @param attachment
-             */
-            @Override
-            public void failed(Throwable throwable, Void attachment) {
-                throwable.printStackTrace();
-            }
-        });
     }
 
 
 
+    public static void main(String[] args) {
+        ServerSocketDemo demo = new ServerSocketDemo();
+        demo.dayTimeServer();
+
+    }
 
 
 }
