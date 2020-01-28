@@ -63,6 +63,8 @@ public class EchoServer {
             // 接受连接事件...一遍又一遍的遍历..要是遍历过了才有事件不得下次遍历才能处理?
             Set<SelectionKey> readyKeys = selector.selectedKeys();
             Iterator<SelectionKey> iterator = readyKeys.iterator();
+
+            // 就绪状态通道集合有值了...
             while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
                 iterator.remove(); // 处理了就删了..下一个
@@ -98,6 +100,7 @@ public class EchoServer {
                     }
 
                 } catch (IOException ex) {
+                    // 终止 通道与选择器 绑定的关系
                     key.cancel();
                     try {
                         key.channel().close();
