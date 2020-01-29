@@ -22,7 +22,7 @@
     * [文件存储属性](Chapter2/store.md)
     * [自定义文件属性视图](Chapter2/user.md)
     * [小结](Chapter2/summary.md)
-* [软硬链接](Chapter3/README.md)
+* [管理符号链接和硬链接](Chapter3/README.md)
     * [链接概述](Chapter3/Introducing.md)
     * [从命令行创建链接](Chapter3/command.md)
     * [创建符号链接](Chapter3/symbolic.md)
