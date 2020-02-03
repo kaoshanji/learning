@@ -18,15 +18,21 @@
 ----
 
 ##  权威权威权威
--   [Java SE规范列表](https://docs.oracle.com/javase/specs/index.html)
--   Java 8
-    -   [Java语言规范](https://docs.oracle.com/javase/specs/jls/se8/html/index.html)
-    -   [Java虚拟机规范](https://docs.oracle.com/javase/specs/jvms/se8/html/index.html)
--   Java 11
-    -   [Java语言规范](https://docs.oracle.com/javase/specs/jls/se11/html/index.html)
-    -   [Java虚拟机规范](https://docs.oracle.com/javase/specs/jvms/se11/html/index.html)
-
--   Java概念图
+-   [Java SE 规范列表](https://docs.oracle.com/javase/specs/index.html)
+-   Java SE 8
+    -   [Java 虚拟机规范](https://docs.oracle.com/javase/specs/jvms/se8/html/index.html)
+    -   [Java 语言规范](https://docs.oracle.com/javase/specs/jls/se8/html/index.html)
+    -   [API](https://docs.oracle.com/javase/8/docs/api/index.html)
+-   Java SE 11
+    -   [Java 虚拟机规范](https://docs.oracle.com/javase/specs/jvms/se11/html/index.html)
+    -   [Java 语言规范](https://docs.oracle.com/javase/specs/jls/se11/html/index.html)
+    -   [API](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
+-   Java EE 8
+    -   [官网](https://www.oracle.com/technetwork/java/javaee/overview/index.html)
+    -   [API](https://javaee.github.io/javaee-spec/javadocs/)
+    -   [tutorial](https://javaee.github.io/tutorial/)
+    -   [javaee8-samples](https://github.com/javaee-samples/javaee8-samples)
+-   Java SE 概念图
 
 ![20200202-185537](images/20200202-185537.png)
 
