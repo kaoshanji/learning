@@ -6,6 +6,8 @@
 
 每本书或在网站连接都有各自的定位，这里仅关注技术本身
 
+Java 每个特性或功能源自某个JCP，呈现方式是语法或包里，变更历史也记录在案，在这里开始，介绍的比较全面简洁直接。
+
 ----
 
 ##  目录
@@ -32,7 +34,11 @@
     -   [API](https://javaee.github.io/javaee-spec/javadocs/)
     -   [tutorial](https://javaee.github.io/tutorial/)
     -   [javaee8-samples](https://github.com/javaee-samples/javaee8-samples)
--   Java SE 概念图
+-   OpenJDK
+    -   [官网](https://hg.openjdk.java.net/)
+    -   [GitHub](https://github.com/openjdk/jdk)
+    -   [Gitee]()
+-   [Java SE 概念图，起点](https://docs.oracle.com/javase/8/docs/)
 
 ![20200202-185537](images/20200202-185537.png)
 
