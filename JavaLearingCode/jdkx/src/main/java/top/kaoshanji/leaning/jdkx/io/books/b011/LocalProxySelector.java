@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * ProxySelector 会记住可以连接的URL
  * 尝试使用代理
  * 位于 proxy.example.com 的代理
  * @author kaoshanji
