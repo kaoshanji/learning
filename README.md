@@ -28,12 +28,6 @@
 -   [微服务](server/microservice/README.md)
 
 
-##  [读源码](source/README.md)
--   [mybatis 3.5.1](source/mybatis_source_3.5.1/README.md)
--   [spring framework 4.3.24](source/spring_framework_source_4.3.24/README.md)
--   [Apache Tomcat 9](source/apache_tomcat_source_9/README.md)
-
-
 ##  谷歌翻译
 -   [Java SE 8](doc_zh/java_se_doc_zh_8/README.md)
 -   [Java EE 8](doc_zh/java_ee_doc_zh_8/README.md)

@@ -86,8 +86,8 @@ SQL语句节点信息与Java接口方法是对应：输入参数、实际执行S
 
 - MyBatis 执行组件
 
-![mybatis来来回回](images/mybatis来来回回.png)
+![mybatis来来回回](../images/mybatis来来回回.png)
 
 - MyBatis 三层结构
 
-![mybatis三层结构](images/mybatis三层组件.png)
+![mybatis三层结构](../images/mybatis三层组件.png)
