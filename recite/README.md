@@ -8,11 +8,6 @@ GitHub、知乎、微信公众号、掘金、牛客网
 
 ##  问题
 
-Java岗面试的重点：
-
-数据结构与算法，JVM内存结构、垃圾回收器、回收算法、GC、并发编程相关(多线程、线程池等)、NIO/BIO、性能优化、设计模式、Spring框架：分布式相关：Redis缓存、一致Hash算法、分布式存储、负载均衡等，微服务以及Docker容器等。
-
-
 - [Java基础](question/012.md)
 - [并发编程](question/006.md)
 - [JavaWeb](question/016.md)
