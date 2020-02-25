@@ -318,7 +318,7 @@ public class Main {
 
         try (AsynchronousFileChannel asynchronousFileChannel = AsynchronousFileChannel.open(path,StandardOpenOption.READ)) {
             current = Thread.currentThread();
-            asynchronousFileChannel.read(buffer, 0, "Read operation status ...", newCompletionHandler<Integer, Object>() {
+            asynchronousFileChannel.read(buffer, 0, "Read operation status ...", new CompletionHandler<Integer, Object>() {
 
             @Override
             public void completed(Integer result, Object attachment) {

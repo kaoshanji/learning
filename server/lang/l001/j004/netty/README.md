@@ -11,6 +11,9 @@ I/O 模型决定连接请求接收发送，并发模型决定数据处理过程
 -   接口服务
 -   [自身设计](az/README.md)
 -   封装依赖：Java  BIO/NIO/AIO
+-   参考应用实践
+        -   [grpc](https://grpc.io/)
+        -   [Dubbo](http://dubbo.apache.org/zh-cn/index.html)
 
 
 ##  参考
