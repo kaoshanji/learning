@@ -8,6 +8,8 @@
 - XML
 - HTML
 - PDF
+- 压缩文件
+    -   [JZlib](http://www.jcraft.com/jzlib/)
 
 
 - Java语言程序设计（进阶篇）（原书第10版）
