@@ -5,4 +5,5 @@
 -   [Tomcat](tomcat/README.md)
 -   [MyBatis](mybatis/README.md)
 -   [Spring Framework](springfa/README.md)
-
+-   [Disruptor](disruptor/README.md)
+-   [Hikaricp](hikaricp/README.md)

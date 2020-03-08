@@ -54,27 +54,28 @@ Java运行时包含的数据对象，都是放在内存中，当程序关闭重�
 
 ##  设计实现
 
-- [JDBC 语法](https://www.processon.com/view/link/5e52131ee4b0cc44b5a6d8cf)
+-   [JDBC 语法](https://www.processon.com/view/link/5e52131ee4b0cc44b5a6d8cf)
 
 ----
 
 ##  应用模式
 
-- [JDBC 流程](https://www.processon.com/view/link/5dc8c8fbe4b07548229edd7e)
+-   [JDBC 流程](https://www.processon.com/view/link/5dc8c8fbe4b07548229edd7e)
 
-- Java对象属性与数据库表列字段相互映射
-- 存入数据库时，使用Java对象属性值拼接SQL语句，发送给数据库执行
-- 读取数据库时，使用查询SQL语句，解析响应结果，初始化Java对象
-- Java对象名称一般对应数据库表名
-- Java对象属性名称一般对应数据库表列字段
-- Java对象属性类型与数据库表列字段可能不匹配
+-   Java对象属性与数据库表列字段相互映射
+-   存入数据库时，使用Java对象属性值拼接SQL语句，发送给数据库执行
+-   读取数据库时，使用查询SQL语句，解析响应结果，初始化Java对象
+-   Java对象名称一般对应数据库表名
+-   Java对象属性名称一般对应数据库表列字段
+-   Java对象属性类型与数据库表列字段可能不匹配
 
 ----
 
 ##  典型案例
-- [MyBatis](https://github.com/kaoshanji/learning/tree/master/server/lang/l001/j004/mybatis)
-- Spring MVC
-- Hibernate
+-   [MyBatis](https://github.com/kaoshanji/learning/tree/master/server/lang/l001/j004/mybatis)
+-   Hikaricp/Druid
+-   Spring MVC
+-   Hibernate
 
 ----
 
