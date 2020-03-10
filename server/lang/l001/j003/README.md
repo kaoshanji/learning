@@ -24,7 +24,7 @@
 -   [J2SE 15](https://jcp.org/en/jsr/detail?id=390)
 -   [Java 语言规范](https://jcp.org/en/jsr/detail?id=901)
 
-
+----
 
 ##  I/O和并发
 -   [新I/O](https://jcp.org/en/jsr/detail?id=51)
@@ -33,6 +33,7 @@
 -   [NIO.2](https://jcp.org/en/jsr/detail?id=203)
 -   [Unicode](https://jcp.org/en/jsr/detail?id=204)
 
+----
 
 ##  数据解析
 -   XML
@@ -53,6 +54,7 @@
     -   [JSON-B](https://jcp.org/en/jsr/detail?id=367)
     -   [JSON 1.1](https://jcp.org/en/jsr/detail?id=374)
 
+----
 
 ##  语言功能
 -   [泛型](https://jcp.org/en/jsr/detail?id=14)
@@ -73,12 +75,13 @@
     -   [小增强](https://jcp.org/en/jsr/detail?id=334)
 -   [批处理](https://jcp.org/en/jsr/detail?id=352)
 
-
+----
 
 ##  安全
 -   [SASL](https://jcp.org/en/jsr/detail?id=28)
 -   [认证](https://jcp.org/en/jsr/detail?id=55)
 
+----
 
 ##  JVM
 -   [JVM中提取信息](https://jcp.org/en/jsr/detail?id=163)
@@ -86,6 +89,7 @@
 -   [类文件](https://jcp.org/en/jsr/detail?id=202)
 -   [可用性管理框架](https://jcp.org/en/jsr/detail?id=319)
 
+----
 
 ##  Web
 -   Servlet
@@ -104,3 +108,5 @@
     -   [JAX-RS 2.1](https://jcp.org/en/jsr/detail?id=370)
 -   [身份验证模块](https://jcp.org/en/jsr/detail?id=196)
 -   [WebSocket](https://jcp.org/en/jsr/detail?id=356)
+
+----
