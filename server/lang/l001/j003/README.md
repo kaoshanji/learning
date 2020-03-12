@@ -2,6 +2,12 @@
 
 >   Java 规范说明，换句话就是，Java功能特性的需求文档以及实现概要
 
+##  JavaSE 新功能和增强功能
+-   [1.5](https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html)
+
+
+
+----
 
 ##  版本发布
 -   [J2EE 1.3](https://jcp.org/en/jsr/detail?id=58)

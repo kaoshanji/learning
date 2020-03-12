@@ -27,6 +27,8 @@
 
 -   [应用模式](105x.md)
 
+[应用模式-`导图`](https://www.processon.com/view/link/5e69d627e4b0e3993b5ee85a)
+
 演示语法API使用示例，有那些主要的方式和模式。
 
 -   [典型案例](106x.md)
