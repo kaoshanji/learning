@@ -1,6 +1,8 @@
 #   Java API 语法
 
->   版本：JDK8，代码：JavaLearingCode/jdkx
+>   版本：JDK8/11，代码：JavaLearingCode/jdkx
+
+主要是 JDK8，部分跟进到11为止
 
 ##  目录
 -   [概述](j100/README.md)
