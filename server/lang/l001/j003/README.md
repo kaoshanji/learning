@@ -43,10 +43,9 @@
 
 ##  数据解析
 -   XML
-    -   [XML解析器](https://jcp.org/en/jsr/detail?id=5)
-    -   [JAXB](https://jcp.org/en/jsr/detail?id=31)
-    -   [XML处理1.1](https://jcp.org/en/jsr/detail?id=63)
-    -   [JAXR](https://jcp.org/en/jsr/detail?id=93)
+    -   [JAXP.1.0](https://jcp.org/en/jsr/detail?id=5)
+    -   [JAXP.1.1](https://jcp.org/en/jsr/detail?id=63)
+    -   [JAXB 1.0](https://jcp.org/en/jsr/detail?id=31)
     -   [JAXB 2.0](https://jcp.org/en/jsr/detail?id=222)
 -   math
     -   [十进制算术增强](https://jcp.org/en/jsr/detail?id=13)
@@ -56,9 +55,10 @@
     -   [JDBC 4.0](https://jcp.org/en/jsr/detail?id=221)
 -   [日期和时间API](https://jcp.org/en/jsr/detail?id=310)
 -   JSON
-    -   [JSON-P](https://jcp.org/en/jsr/detail?id=353)
-    -   [JSON-B](https://jcp.org/en/jsr/detail?id=367)
-    -   [JSON 1.1](https://jcp.org/en/jsr/detail?id=374)
+    -   [JSON-P.1.0](https://jcp.org/en/jsr/detail?id=353)
+    -   [JSON-P.1.1](https://jcp.org/en/jsr/detail?id=374)
+    -   [JSON-B.1.0](https://jcp.org/en/jsr/detail?id=367)
+-   [JAXR：分布式注册表服务](https://jcp.org/en/jsr/detail?id=93)
 
 ----
 

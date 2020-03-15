@@ -1,4 +1,4 @@
-#   Java API 语法
+#   Java SE 语法
 
 >   版本：JDK8/11，代码：JavaLearingCode/jdkx
 

@@ -29,6 +29,10 @@ bit 是计算机最小的单位，大部分使用 8位的块即字节作为基�
 ##  解决方案
 
 -   对 UNIX 网络编程 I/O 模型一点认识
+-   Java IO相关JCP
+    -   [新I/O](https://jcp.org/en/jsr/detail?id=51)
+    -   [NIO.2](https://jcp.org/en/jsr/detail?id=203)
+    -   [Unicode](https://jcp.org/en/jsr/detail?id=204)
 
 把外部设备的数据写入到 JVM 叫输入，把 JVM 里的数据读取到外部设备叫输出，这是在堆内操作。
 
