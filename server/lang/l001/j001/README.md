@@ -6,7 +6,7 @@
 
 ##  目录
 -   [概述](j100/README.md)
--   [面向对象](j101/README.md)
+-   [类型系统](j101/README.md)
 -   [动态特性](j102/README.md)
 -   [JDBC](j103/README.md)
 -   [I/O](j104/README.md)
