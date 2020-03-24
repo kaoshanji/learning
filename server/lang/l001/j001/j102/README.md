@@ -1,4 +1,18 @@
-# 动态特性
+# 语言特性
+
+> 这部分主要出现在项目框架里面，或者作为一些工具。
+
+##  内容/资料
+-   [事件](ev/README.md)
+-   [反射](re/README.md)
+-   [注解](an/README.md)
+-   [代理](pr/README.md)
+-   [字节码](bc/README.md)
+-   [方法句柄](mh/README.md)
+-   [对象引用回收](or/README.md)
+
+
+----
 
 
 
