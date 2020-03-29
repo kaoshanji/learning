@@ -4,10 +4,22 @@
 
 只有在特定环境场景下，才能做出更优的针对性优化
 
+框架最初开始出现时是为了解决某个问题，并以此提供该解决方案，这是他的核心基本功能，也是该框架的与众不同之处，虽然后面随着版本更新添加了很多很多特性，但是，最基本的功能是不变的，可能有扩展，可能有优化，但是，一定要保持并记住初心。
+
+设计规划时是从整体出发，具体实现是堆积拼接，围绕着核心功能。一个主流程由多个分支流程辅助，分支流程是多个基本组件组合。
+
+理解源码可以从画出主流程设计开始，然后分割成一小段一小段去理解，只要每段是一个较为完整的逻辑即可。
+
+
 ##  目录
--   [Netty](netty/README.md)，I/O 网络连接
--   [Tomcat](tomcat/README.md)：I/O 网络容器
--   [MyBatis](mybatis/README.md)：SQL语句
--   [Spring Framework](springfa/README.md)：对象
+-   [Netty](netty/README.md)，Java服务器客户端网络编程
+    -   网络编程的难点是对网络协议理解，也就是数据属性的含义，核心是网络数据的解析
+    -   网络中传递的数据格式只有一种，就是字节。不同的协议对同样的字节有不同的解释以此表达不同的逻辑
+    -   把字节翻译成可以使用的表现形式
+-   [Tomcat](tomcat/README.md)：作为Servlet容器出现，支持HTTP服务器，虽然提供了很多功能，但是核心逻辑是对HTTP协议的解析
+-   [MyBatis](mybatis/README.md)：SQL语句，提供了一些缓存SQL语句、延迟加载等等附加功能，这是为了优化，但是核心逻辑是对SQL语句的管理
+-   [Spring Framework](springfa/README.md)：Java对象容器，处理对象依赖
 -   [Disruptor](disruptor/README.md)
--   [Hikaricp](hikaricp/README.md)：数据库连接池
+-   [Hikaricp](hikaricp/README.md)：数据库连接池，虽然性能很高，但是，他还是是个数据库连接池，立足于连接池基本功能，只是做的更好
+
+----

@@ -126,8 +126,6 @@ Java运行时包含的数据对象，都是放在内存中，当程序关闭重�
 ##  典型案例
 -   [MyBatis](https://github.com/kaoshanji/learning/tree/master/server/lang/l001/j004/mybatis)
 -   Hikaricp/Druid
--   Spring MVC
--   Hibernate
 
 ----
 
