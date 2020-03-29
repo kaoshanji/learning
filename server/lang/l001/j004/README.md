@@ -5,9 +5,9 @@
 只有在特定环境场景下，才能做出更优的针对性优化
 
 ##  目录
--   [Netty](netty/README.md)
--   [Tomcat](tomcat/README.md)
--   [MyBatis](mybatis/README.md)
--   [Spring Framework](springfa/README.md)
+-   [Netty](netty/README.md)，I/O 网络连接
+-   [Tomcat](tomcat/README.md)：I/O 网络容器
+-   [MyBatis](mybatis/README.md)：SQL语句
+-   [Spring Framework](springfa/README.md)：对象
 -   [Disruptor](disruptor/README.md)
--   [Hikaricp](hikaricp/README.md)
+-   [Hikaricp](hikaricp/README.md)：数据库连接池
