@@ -9,16 +9,14 @@ Tomcat 服务器是一个免费的开放源代码的 Web 应用服务器，属�
 Apache Tomcat 9.0 版本实现了Servlet 4.0和JavaServer Pages 2.3 规范，并包含许多额外的功能，是开发和部署Web应用程序和Web服务的有用平台。
 
 
-##  目录
--   接口服务
--   [源码理解](az/README.md)
+-   [源码理解](source/README.md)
 
 
 ##  参考资料
 -   [官网](http://tomcat.apache.org/)
 -   [Github](https://github.com/apache/tomcat)
 -   [官方文档](https://tomcat.apache.org/tomcat-9.0-doc/index.html)
--   [官方文档zh](../../doc_zh/apache_tomcat_doc_zh_9/README.md)
+-   [官方文档zh](https://github.com/kaoshanji/learning/blob/master/doc_zh/apache_tomcat_doc_zh_9/SUMMARY.md)
 -   极客时间：深入拆解Tomcat&Jetty
 -   Tomcat内核设计剖析
 -   Tomcat架构解析
